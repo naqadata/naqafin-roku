@@ -42,9 +42,7 @@ sub loadItems()
 
     if m.top.selectedAudioStreamIndex = 0
         currentItem = m.global.queueManager.callFunc("getCurrentItem")
-        if isChainValid(currentItem, "json")
-            m.top.selectedAudioStreamIndex = FindPreferredAudioStream(currentItem.json.MediaStreams)
-        end if
+        m.top.selectedAudioStreamIndex = FindPreferredAudioStream(chainLookup(currentItem, "json.MediaStreams"))
     end if
 
     id = m.top.itemId
