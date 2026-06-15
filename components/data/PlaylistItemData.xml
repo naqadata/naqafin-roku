@@ -2,12 +2,13 @@
 <component name="PlaylistItemData" extends="JFContentItem">
   <interface>
     <field id="id" type="string" />
+    <field id="name" type="string" />
     <field id="title" type="string" />
     <field id="trackNumber" type="integer" />
     <field id="RunTimeTicks" type="float" />
     <field id="IndexNumber" type="integer" />
     <field id="IndexNumberEnd" type="integer" />
-    <field id="seriesname" type="string" />
+    <field id="SeriesName" type="string" />
     <field id="SeasonName" type="string" />
     <field id="ParentIndexNumber" type="integer" />
     <field id="ProductionYear" type="integer" />

@@ -457,30 +457,38 @@ function PlaylistItemList(id as string)
     if data.Items.Count() = 0 then return row
 
     for each item in data.Items
-        tmp = CreateObject("roSGNode", "PlaylistItemData")
-
-        tmp.posterUrl = getPosterURLFromTag(item, {})
-        tmp.id = item.LookupCI("id")
-        tmp.title = item.LookupCI("name")
-        tmp.artists = item.LookupCI("artists")
-        tmp.album = item.LookupCI("album")
-        tmp.type = item.LookupCI("type")
-        tmp.RunTimeTicks = item.LookupCI("RunTimeTicks")
-        tmp.ProductionYear = item.LookupCI("ProductionYear")
-        tmp.OfficialRating = item.LookupCI("OfficialRating")
-        tmp.IndexNumber = item.LookupCI("IndexNumber")
-        tmp.seriesname = item.LookupCI("seriesname")
-        tmp.SeasonName = item.LookupCI("SeasonName")
-        tmp.IndexNumberEnd = item.LookupCI("IndexNumberEnd")
-        tmp.ParentIndexNumber = item.LookupCI("ParentIndexNumber")
-        tmp.played = chainLookupReturn(item, "UserData.played", false)
-        tmp.startingPoint = chainLookupReturn(item, "UserData.PlaybackPositionTicks", 0)
-        results.push(tmp)
+        results.push(CreatePlaylistItemData(item))
     end for
 
     row.appendChildren(results)
 
     return row
+end function
+
+function CreatePlaylistItemData(item as object) as object
+    tmp = CreateObject("roSGNode", "PlaylistItemData")
+
+    tmp.posterUrl = getPosterURLFromTag(item, {})
+    tmp.id = item.LookupCI("id")
+    tmp.name = item.LookupCI("name")
+    tmp.title = item.LookupCI("name")
+    tmp.artists = item.LookupCI("artists")
+    tmp.album = item.LookupCI("album")
+    tmp.type = item.LookupCI("type")
+    tmp.RunTimeTicks = item.LookupCI("RunTimeTicks")
+    tmp.ProductionYear = item.LookupCI("ProductionYear")
+    tmp.OfficialRating = item.LookupCI("OfficialRating")
+    tmp.IndexNumber = item.LookupCI("IndexNumber")
+    tmp.SeriesName = item.LookupCI("SeriesName")
+    tmp.seriesname = item.LookupCI("seriesname")
+    tmp.SeasonName = item.LookupCI("SeasonName")
+    tmp.IndexNumberEnd = item.LookupCI("IndexNumberEnd")
+    tmp.ParentIndexNumber = item.LookupCI("ParentIndexNumber")
+    tmp.played = chainLookupReturn(item, "UserData.played", false)
+    tmp.startingPoint = chainLookupReturn(item, "UserData.PlaybackPositionTicks", 0)
+    tmp.json = item
+
+    return tmp
 end function
 
 ' Get Songs that are on an Album
