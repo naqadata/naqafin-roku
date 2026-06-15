@@ -22,6 +22,10 @@ sub onQuickPlayEvent(msg)
     if not isValid(itemNode) then return
     if not isValidAndNotEmpty(itemNode.id) then return
 
+    if playPlaylistUpNextItem(itemNode)
+        return
+    end if
+
     ' Get item type
     selectedItemType = invalid
     if isValidAndNotEmpty(itemNode.type)
@@ -530,6 +534,72 @@ sub onDeepLinkingEvent(args)
     m.scene.dialog.observeField("buttonSelected", m.port)
 end sub
 
+function playPlaylistUpNextItem(selectedItem as object) as boolean
+    playlistID = chainLookup(selectedItem, "json.PlaylistUpNextPlaylistId")
+    if not isValidAndNotEmpty(playlistID) then return false
+
+    playlistData = PlaylistItemList(playlistID)
+    if not isValidAndNotEmpty(playlistData) then return false
+    if playlistData.getChildCount() = 0 then return false
+
+    selectedIndex = chainLookupReturn(selectedItem, "json.PlaylistUpNextPlaylistIndex", -1)
+
+    if chainLookupReturn(selectedItem, "json.PlaylistUpNextIsExternalResumeItem", false)
+        externalItem = CreatePlaylistItemData(selectedItem.json)
+        externalItem.startingPoint = chainLookupReturn(selectedItem, "json.UserData.PlaybackPositionTicks", 0)
+        queue = [externalItem]
+
+        if selectedIndex < 0 then selectedIndex = 0
+
+        for i = selectedIndex to playlistData.getChildCount() - 1
+            queue.push(playlistData.getChild(i))
+        end for
+
+        MainAction.playItem(queue, { method: "set", resetShuffle: true, position: 0 })
+        return true
+    end if
+
+    selectedItemID = selectedItem.LookupCI("id")
+    queue = [CreatePlaylistItemData(selectedItem.json)]
+
+    if selectedIndex >= 0 and selectedIndex < playlistData.getChildCount()
+        indexedItem = playlistData.getChild(selectedIndex)
+        if not isValid(indexedItem) or not isStringEqual(indexedItem.LookupCI("id"), selectedItemID)
+            selectedIndex = -1
+        end if
+    end if
+
+    if selectedIndex < 0 or selectedIndex >= playlistData.getChildCount()
+        selectedIndex = 0
+        foundSelectedItem = false
+
+        for i = 0 to playlistData.getChildCount() - 1
+            playlistItem = playlistData.getChild(i)
+            if isValid(playlistItem) and isStringEqual(playlistItem.LookupCI("id"), selectedItemID)
+                selectedIndex = i
+                foundSelectedItem = true
+                exit for
+            end if
+        end for
+
+        if not foundSelectedItem
+            selectedIndex = chainLookupReturn(selectedItem, "json.PlaylistUpNextPlaylistIndex", -1)
+        end if
+    end if
+
+    if selectedIndex < 0 or selectedIndex >= playlistData.getChildCount()
+        MainAction.playItem(queue, { method: "set", resetShuffle: true, position: 0 })
+        return true
+    end if
+
+    for i = selectedIndex + 1 to playlistData.getChildCount() - 1
+        queue.push(playlistData.getChild(i))
+    end for
+
+    MainAction.playItem(queue, { method: "set", resetShuffle: true, position: 0 })
+    return true
+end function
+
 sub onLibrarySelection(selectedItem)
     if isStringEqual(selectedItem.collectionType, CollectionType.MOVIES)
         group = CreateVisualLibraryScene(selectedItem, ItemType.MOVIE)
@@ -743,6 +813,11 @@ sub onSelectedItemEvent(msg)
     selectedItem = msg.getData()
     if isValid(selectedItem)
         startLoadingSpinner()
+
+        if playPlaylistUpNextItem(selectedItem)
+            return
+        end if
+
         selectedItemType = selectedItem.type
 
         if isValid(selectedItemType)
