@@ -9,6 +9,7 @@ import "pkg:/source/utils/config.bs"
 const SCREEN_PADDING = 60
 const LOWEST_CAPTION = 1080 - SCREEN_PADDING
 const VIEWABLE_AREA = 1080 - 2 * SCREEN_PADDING
+const AUTO_CAPTION_MAX_WIDTH = 1600
 
 sub init()
     m.top.playerState = MediaPlaybackState.STOPPED
@@ -18,9 +19,11 @@ sub init()
 
     m.captionTimer = m.top.findNode("captionTimer")
     m.captionTimer.ObserveField("fire", "updateCaption")
+    m.captionFetchTimer = m.top.findNode("captionFetchTimer")
+    m.captionFetchTimer.ObserveField("fire", "refreshCaption")
 
     m.captionList = []
-    m.reader = createObject("roUrlTransfer")
+    m.reader = authRequest(createObject("roUrlTransfer"))
     m.fontColor = CreateObject("roRegex", "color\s*=\s*(""[^""]*""|\'[^\']*\'|[^\s]+)", "i")
 
     ' Caption Style
@@ -60,17 +63,113 @@ end sub
 
 sub fetchCaption()
     m.captionTimer.control = "stop"
-    re = CreateObject("roRegex", "(http.*?\.vtt)", "s")
-    url = re.match(m.top.url)[0]
-    if url <> invalid
-        m.reader.setUrl(url)
-        text = m.reader.GetToString()
-        m.captionList = parseVTT(text)
-        m.captionTimer.control = "start"
-    else
+    m.captionFetchTimer.control = "stop"
+    applyCaptionStyleForUrl()
+    if not isValidAndNotEmpty(m.top.url)
         m.captionTimer.control = "stop"
+        return
+    end if
+
+    refreshCaption()
+    m.captionTimer.control = "start"
+
+    if isLiveCaptionUrl(m.top.url)
+        m.captionFetchTimer.duration = m.top.pollSeconds
+        m.captionFetchTimer.control = "start"
     end if
 end sub
+
+sub refreshCaption()
+    url = m.top.url
+    if isLiveCaptionUrl(url)
+        separator = url.Instr("?") = -1 ? "?" : "&"
+        positionTicks = m.top.currentPos * 10000&
+        url += separator + "positionTicks=" + positionTicks.toStr()
+    end if
+
+    m.reader.setUrl(url)
+
+    if LCase(url.Left(8)) = "https://"
+        setCertificateAuthority(m.reader)
+    end if
+
+    text = m.reader.GetToString()
+    if isValid(text)
+        m.captionList = parseVTT(text)
+    end if
+end sub
+
+function isLiveCaptionUrl(url as string) as boolean
+    return url.Instr("/AutoGenerateCaptions/") <> -1
+end function
+
+sub applyCaptionStyleForUrl()
+    if isLiveCaptionUrl(m.top.url)
+        m.fonts = {
+            "regular": "font:SystemFontFile",
+            "bold": "font:BoldSystemFontFile",
+            "italic": "font:SystemFontFile",
+            "bolditalic": "font:BoldSystemFontFile"
+        }
+        m.fontSize = Int(m.fontSize * 0.75)
+        m.textColor = "0xFFFFFFFF"
+        m.bgColor = "0x00000000"
+        m.windowBgColor = "0x00000000"
+        m.textEffect = "Uniform"
+        m.lineHeights = getLineHeights()
+    end if
+end sub
+
+function wrapAutoCaptionText(text as string) as string
+    if not isLiveCaptionUrl(m.top.url) then return text
+    if text.Instr("<") <> -1 then return text
+
+    wrappedLines = []
+    for each sourceLine in text.Split(Chr(10))
+        words = sourceLine.Split(" ")
+        currentLine = string.EMPTY
+
+        for each word in words
+            if word = string.EMPTY then continue for
+
+            candidate = word
+            if currentLine <> string.EMPTY
+                candidate = currentLine + " " + word
+            end if
+
+            if measureCaptionTextWidth(candidate) <= AUTO_CAPTION_MAX_WIDTH or currentLine = string.EMPTY
+                currentLine = candidate
+            else
+                wrappedLines.Push(currentLine)
+                currentLine = word
+            end if
+        end for
+
+        if currentLine <> string.EMPTY
+            wrappedLines.Push(currentLine)
+        end if
+    end for
+
+    return wrappedLines.Join(Chr(10))
+end function
+
+function measureCaptionTextWidth(text as string) as integer
+    tempGroup = CreateObject("roSGNode", "Group")
+    tempLabel = CreateObject("roSGNode", "MultiStyleLabel")
+    tempLabel.drawingStyles = {
+        "default": {
+            "fontUri": m.fonts.regular,
+            "fontSize": m.fontSize,
+            "color": m.textColor
+        }
+    }
+    tempLabel.text = text
+    tempGroup.appendChild(tempLabel)
+    m.top.appendChild(tempGroup)
+    width = Int(tempLabel.boundingRect().width)
+    m.top.removeChild(tempGroup)
+    return width
+end function
 
 function newLayoutGroup(label)
     newlg = CreateObject("roSGNode", "LayoutGroup")
@@ -127,7 +226,7 @@ sub updateCaption()
         if entry["text"].count() = 0 then continue for ' Guard against empty text blocks
         if entry["start"] <= m.top.currentPos and m.top.currentPos < entry["end"]
 
-            fullText = entry["text"].Join(Chr(10))
+            fullText = wrapAutoCaptionText(entry["text"].Join(Chr(10)))
 
             ' look for style tags
             currentStyle = {

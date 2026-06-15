@@ -1,4 +1,5 @@
 enum SubtitleSelection
     NOTSET = -2
     NONE = -1
+    AUTO_GENERATED = -3
 end enum

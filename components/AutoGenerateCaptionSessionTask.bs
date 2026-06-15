@@ -1,0 +1,44 @@
+import "pkg:/source/api/baserequest.bs"
+import "pkg:/source/utils/misc.bs"
+import "pkg:/source/utils/parsedUrl.bs"
+
+sub init()
+    m.top.functionName = "runTask"
+end sub
+
+sub runTask()
+    if LCase(m.top.action) = "stop"
+        stopSession()
+    else
+        startSession()
+    end if
+end sub
+
+sub startSession()
+    requestBody = {
+        playSessionId: m.top.playSessionId,
+        mediaSourceId: m.top.mediaSourceId,
+        audioStreamIndex: m.top.audioStreamIndex,
+        positionTicks: m.top.positionTicks,
+        language: m.top.language,
+        continueAfterPlaybackStops: false
+    }
+
+    req = APIRequest(Substitute("/AutoGenerateCaptions/Items/{0}/Sessions", m.top.itemId))
+    response = postJson(req, FormatJson(requestBody))
+
+    if not isValid(response) or not isValidAndNotEmpty(response.liveVttUrl)
+        m.top.error = "Failed to start auto-generated caption session"
+        return
+    end if
+
+    m.top.response = response
+end sub
+
+sub stopSession()
+    if not isValidAndNotEmpty(m.top.sessionId) then return
+
+    req = APIRequest(Substitute("/AutoGenerateCaptions/Sessions/{0}/Stop", m.top.sessionId))
+    postVoid(req)
+    m.top.response = { sessionId: m.top.sessionId, stopped: true }
+end sub

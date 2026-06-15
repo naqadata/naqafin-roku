@@ -6,8 +6,10 @@
               <field id="currentCaption" type="roArray" />
               <field id="playerState" type="string" />
               <field id="currentPos" type="int" />
+              <field id="pollSeconds" type="integer" value="2" />
        </interface>
        <children>
               <timer id="captionTimer" repeat="true" duration="0.1" />
+              <timer id="captionFetchTimer" repeat="true" duration="2" />
        </children>
 </component>

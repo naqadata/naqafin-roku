@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="AutoGenerateCaptionSessionTask" extends="Task">
+  <interface>
+    <field id="action" type="string" />
+    <field id="itemId" type="string" />
+    <field id="playSessionId" type="string" />
+    <field id="mediaSourceId" type="string" />
+    <field id="audioStreamIndex" type="integer" />
+    <field id="positionTicks" type="longinteger" />
+    <field id="language" type="string" value="auto" />
+    <field id="sessionId" type="string" />
+    <field id="response" type="assocarray" />
+    <field id="error" type="string" />
+  </interface>
+</component>
