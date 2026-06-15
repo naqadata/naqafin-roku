@@ -1,24 +1,54 @@
-<p align="center"><img src="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/images/channel-poster_fhd.png" style="border: 1px solid #eee; border-radius: 4px" /></p>
+# Naqafin for Roku
 
-<h1 align="center">Jellyfin for Roku</h1>
-<p align="center">The official <strong>Jellyfin</strong> Roku client.</p>
-<p align="center">Navigate your Jellyfin library and watch, listen, and view your media.</p>
-<p align="center">Cool features include song lyric support, trickplay images, media segment support, downloading subtitles direct from your Roku, and more.</p>
-<h2 align="center">Part of the <a href="https://jellyfin.org">Jellyfin Project</a></h2>
-<p align="center"><a href="https://channelstore.roku.com/en-ca/details/4d9e526a7d972d4decf98ea6a84000f7:c617f4902629cc0bd1e1411db1775cf3/jellyfin">Roku Channel Store</a></p>
+Naqafin is an unofficial Roku client for Jellyfin-compatible media servers.
 
-<h2>Screenshots</h2>
-<p align="center">
-<a href="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/home.jpg" title="Home Screen"><img src="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/home.jpg" style="border: 1px solid #eee;" width="300" alt="Home Screen" /></a>
-<a href="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/movieDetails.jpg" title="Movie Details"><img src="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/movieDetails.jpg" style="border: 1px solid #eee;" width="300" alt="Movie Details" /></a>
-<a href="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/musicPlayback.jpg" title="Music Playback"><img src="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/musicPlayback.jpg" style="border: 1px solid #eee;" width="300" alt="Music Playback" /></a>
-<a href="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/tvLibrary.jpg" title="TV Show Library"><img src="https://raw.githubusercontent.com/jellyfin/jellyfin-roku/master/screenshots/tvLibrary.jpg" style="border: 1px solid #eee;" width="300" alt="TV Show Library" /></a>
-</p>
+This project is forked from the official [Jellyfin Roku client](https://github.com/jellyfin/jellyfin-roku), but it is not affiliated with, endorsed by, or sponsored by the Jellyfin project or Roku. It exists as a personal downstream build while experimental client features are developed and tested.
 
-## Advanced
+Naqafin does not provide media content. It connects to a Jellyfin server that you configure.
 
-For more advanced deployment methods, access to crash logs, or to learn how to setup a developer environment so you can write some code yourself please read the [DEVGUIDE](docs/DEVGUIDE.md).
+## Differences From Jellyfin Roku
 
-## Playback Troubleshooting
+Naqafin currently includes these changes relative to the official Jellyfin Roku client:
 
-Having issues with playback? [Here are things to try](https://github.com/jellyfin/jellyfin-roku/wiki/Playback-Troubleshooting).
+- Playlist Up Next support: adds a home row for continuing playback from configured playlists.
+- Server-generated caption playback support: adds client support for requesting and playing generated subtitle tracks from a compatible Jellyfin server plugin.
+- Naqafin branding and Roku packaging metadata for private beta distribution.
+
+The feature changes are maintained separately so they can be proposed upstream as focused pull requests.
+
+## Status
+
+This is a personal/private beta build. Expect rough edges, force-pushed experiments, and changes that are useful for testing before they are polished enough for upstream review.
+
+For the official Jellyfin Roku client, use the upstream project:
+
+- Source: <https://github.com/jellyfin/jellyfin-roku>
+- Roku Channel Store: <https://channelstore.roku.com/>
+
+## Building
+
+Install dependencies and build the Roku package:
+
+```bash
+npm ci
+npm run build
+```
+
+The build output is written to `out/`.
+
+## Development
+
+Most client development should happen in the focused Jellyfin Roku feature branches first. Naqafin then merges those branches and adds downstream-only branding/package changes.
+
+Downstream-only changes should stay in this repo, including:
+
+- Naqafin app name and artwork
+- Roku beta/public package settings
+- Store listing, policy, and support metadata
+- Temporary compatibility tweaks for Naqafin distribution
+
+## License
+
+Naqafin is distributed under the same GPL-2.0 license as the upstream Jellyfin Roku client. See [LICENSE](LICENSE).
+
+Jellyfin is a trademark of the Jellyfin project. Roku is a trademark of Roku, Inc. This project is unofficial and independent.
