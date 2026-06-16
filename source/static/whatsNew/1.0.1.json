@@ -1,0 +1,10 @@
+[
+  {
+    "description": "Match SRT and VTT subtitle styling to generated captions",
+    "author": "Naqadata"
+  },
+  {
+    "description": "Fix custom subtitle playback for existing subtitle tracks",
+    "author": "Naqadata"
+  }
+]
