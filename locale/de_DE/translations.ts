@@ -700,7 +700,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwende das generierte Startbildschirm-Bild als Hintergrund für die Jellyfin-Startseite. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -710,7 +710,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -761,7 +761,7 @@
         <extracomment>Name of codec used in settings menu</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -964,7 +964,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Popup mit Neuigkeiten anzeigen, wenn Jellyfin auf eine neue Version aktualisiert wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -1171,7 +1171,7 @@
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
-        <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
+        <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
         <translation>Merke den aktuell angemeldeten Benutzer und versuche, ihn beim nächsten Start von Jellyfin erneut anzumelden.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -1181,7 +1181,7 @@
         <extracomment>Message shown in OSD when no chapter data is returned by the API</extracomment>
     </message>
     <message>
-        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Pass die Anordnung der Abschnitte der Roku-Startansicht an den Startbildschirm des Webclients an. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -1363,8 +1363,8 @@
         <translation>Die Anzahl an Episoden die automatisch nach der gewählten Episode abgespielt werden. Benötigt, das die Option &quot;Nächste Episode automatisch abspielen&quot; auf dem Server aktiviert ist.</translation>
     </message>
     <message>
-        <source>or newer to use this app or install and use the Jellyfin Legacy app from Roku&apos;s Streaming Store</source>
-        <translation>oder neuer um diese App zu nutzen oder installiere und nutze die App &quot;Jellyfin Legacy&quot; von Roku&apos;s Streaming Store</translation>
+        <source>or newer to use this app or install a compatible legacy client</source>
+        <translation>oder neuer um diese App zu nutzen oder installiere und nutze die App &quot;compatible legacy client&quot; von Roku&apos;s Streaming Store</translation>
     </message>
     <message>
         <source>which is not supported by this app. Please update the server to</source>
@@ -1507,7 +1507,7 @@
         <translation>Von vorne beginnen.</translation>
     </message>
     <message>
-        <source>Settings relating to how Jellyfin should handle media segments.</source>
+        <source>Settings relating to how Naqafin should handle media segments.</source>
         <translation>Einstellungen, wie Jellyfin mit Mediensegmenten umgehen sollte.</translation>
     </message>
     <message>
@@ -1611,7 +1611,7 @@
         <translation>Filter verwerfen</translation>
     </message>
     <message>
-        <source>Forget applied library filters when Jellyfin is closed.</source>
+        <source>Forget applied library filters when Naqafin is closed.</source>
         <translation>Verwerfen von angewendeten Filter auf Bibliotheken beim Beenden von Jellyfin.</translation>
     </message>
     <message>
@@ -1691,7 +1691,7 @@
         <translation>Werbe-Abschnitte</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for commercial segments?</source>
+        <source>What action should Naqafin take for commercial segments?</source>
         <translation>Welche Maßnahmen sollte Jellyfin für kommerzielle Segmente ergreifen?</translation>
     </message>
     <message>
@@ -1699,7 +1699,7 @@
         <translation>Intro-Segmente</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for intro segments?</source>
+        <source>What action should Naqafin take for intro segments?</source>
         <translation>Welche Maßnahmen sollte Jellyfin für Intro-Segmente ergreifen?</translation>
     </message>
     <message>
@@ -1707,7 +1707,7 @@
         <translation>Outro-Segmente</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for outro segments?</source>
+        <source>What action should Naqafin take for outro segments?</source>
         <translation>Welche Maßnahmen sollte Jellyfin für die Outro-Segmente ergreifen?</translation>
     </message>
     <message>
@@ -1715,7 +1715,7 @@
         <translation>Vorschau-Segmente</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for preview segments?</source>
+        <source>What action should Naqafin take for preview segments?</source>
         <translation>Welche Maßnahmen sollte Jellyfin für die Vorschau-Segmente ergreifen?</translation>
     </message>
     <message>
@@ -1763,7 +1763,7 @@
         <translation>Zusammenfassungssegmente</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for recap segments?</source>
+        <source>What action should Naqafin take for recap segments?</source>
         <translation>Welche Maßnahmen sollte Jellyfin in Bezug auf die Zusammenfassungssegmente ergreifen?</translation>
     </message>
     <message>
@@ -1883,35 +1883,35 @@
         <translation>Abschnitt 8</translation>
     </message>
     <message>
-        <source>Select what to show in section 1. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 1. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 1. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 2. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 2. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 2. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 3. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 3. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 3. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 4. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 4. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 4. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 5. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 5. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 5. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 6. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 6. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 6. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 7. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 7. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 7. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
-        <source>Select what to show in section 8. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 8. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Auswahl für Abschnitt 8. Diese Einstellung hat keinen Effekt wenn &quot;Verwende die Anordnung der Home-Sektion des Webclients&quot; aktiv ist. Um die Änderungen zu übernehmen muss Jellyfin geschlossen und neu geöffnet werden.</translation>
     </message>
     <message>
@@ -2419,7 +2419,7 @@
         <translation>Immer versuchen, Videodateien direkt abzuspielen</translation>
     </message>
     <message>
-        <source>Forces Jellyfin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</source>
+        <source>Forces Naqafin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</source>
         <translation>Erzwingt Jellyfin Videodateien direkt abzuspielen, inklusive Live-TV. Das Aktivieren ignoriert alle anderen Wiedergabe-Unterstützungseinstellungen und sorgt dafür, dass die direkte Wiedergabe immer zuerst versucht wird. Außerdem ändert es, wie Transkodierungsgründe angezeigt werden.</translation>
     </message>
     <message>
@@ -6742,7 +6742,7 @@
         <translation>Server wechseln</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Jellyfin home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwenden Sie das generierte Splashscreen-Bild als Jellyfin-Hintergrund. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -6752,7 +6752,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -6761,11 +6761,11 @@
         <translation>Designelemente</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background.</source>
         <translation>Verwenden Sie das generierte Splashscreen-Bild als Hintergrund für Jellyfin&apos;s Bildschirmschoner.</translation>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Optionen für Jellyfin&apos;s Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -7616,7 +7616,7 @@
         <translation>Anmeldedaten speichern?</translation>
     </message>
     <message>
-        <source>Hides all clocks in Jellyfin. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Hides all clocks in Naqafin. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Blendet alle Uhren in Jellyfin aus. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -7636,7 +7636,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Jellyfin home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwenden Sie das generierte Startbildschirm-Bild als Jellyfin-Hintergrund. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -7646,7 +7646,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -7655,7 +7655,7 @@
         <translation>Designelemente</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background.</source>
         <translation>Verwenden Sie das generierte Splashscreen-Bild als Hintergrund für Jellyfin&apos;s Bildschirmschoner.</translation>
     </message>
     <message>
@@ -7664,7 +7664,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Optionen für Jellyfin&apos;s Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -8677,7 +8677,7 @@
         <extracomment>Dialog title when unable to load Content from Server</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Nutze Jellyfin&apos;s Generierten Splashscreen als Bildschirmschoner Hintergrund. Jellyfin muss geschlossen und wieder geöffnet werden damit die Änderung in Kraft treten.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -8726,7 +8726,7 @@
         <translation>Überspringe Intro</translation>
     </message>
     <message>
-        <source>Hides all clocks in Jellyfin. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Hides all clocks in Naqafin. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Blendet alle Uhren in Jellyfin aus. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -8751,7 +8751,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -8760,7 +8760,7 @@
         <translation>Designelemente</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Nutze Jellyfin&apos;s Generierten Splashscreen als Bildschirmschoner Hintergrund. Jellyfin muss geschlossen und wieder geöffnet werden damit die Änderung in Kraft treten.</translation>
     </message>
     <message>
@@ -8769,7 +8769,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Optionen für Jellyfin&apos;s Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -9249,11 +9249,11 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Nutze generiertes Splashscreen-Bild als Hintergrund für den Bildschirmschoner von Jellyfin. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderung wirksam wird.</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Nutze generiertes Splashscreen-Bild als Hintergrund für die Startseite von Jellyfin. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -9348,7 +9348,7 @@
         <translation>Trailer abspielen</translation>
     </message>
     <message>
-        <source>Hides all clocks in Jellyfin. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Hides all clocks in Naqafin. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Blendet alle Uhren in Jellyfin aus. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -9368,7 +9368,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -9382,7 +9382,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Optionen für Jellyfins Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -9881,7 +9881,7 @@
         <translation>Server wechseln</translation>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Einstellungen für Jellyfin&apos;s Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -10028,7 +10028,7 @@
         <translation>Trailer abspielen</translation>
     </message>
     <message>
-        <source>Hides all clocks in Jellyfin. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Hides all clocks in Naqafin. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Blendet alle Uhren in Jellyfin aus. Jellyfin muss neu geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -10048,7 +10048,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Generierten Splashscreen als Jellyfin&apos;s Hintergrund verwenden. Jellyfin muss neu geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -10058,7 +10058,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Einstellungen für das Aussehen Jellyfin&apos;s.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -10067,7 +10067,7 @@
         <translation>Designelemente</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Generierten Splashscreen als Jellyfin&apos;s Bildschirmschoner verwenden. Jellyfin muss neu geöffnet werden, damit die Änderung wirksam wird.</translation>
     </message>
     <message>
@@ -11732,7 +11732,7 @@
         <translation>Bildschirmschoner</translation>
     </message>
     <message>
-        <source>Options for Jellyfin&apos;s screensaver.</source>
+        <source>Options for Naqafin&apos;s screensaver.</source>
         <translation>Einstellungen für Jellyfins Bildschirmschoner.</translation>
         <extracomment>Description for Screensaver user settings.</extracomment>
     </message>
@@ -11811,7 +11811,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s screensaver background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s screensaver background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Generierten Splashscreen als Jellyfin&apos;s Bildschirmschoner verwenden. Jellyfin muss neu geöffnet werden, damit die Änderung wirksam wird.</translation>
     </message>
     <message>
@@ -11820,7 +11820,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Generierten Startbildschirm als Jellyfins Hintergrund verwenden. Jellyfin muss neu geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -11839,7 +11839,7 @@
         <extracomment>Name of a setting - should we hide subtitles that might transcode</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Zeige Was ist neu Popup nach einem Jellyfin update.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -11857,7 +11857,7 @@
         <translation>Wenn ausgewählt, wird das Sterne und Benutzerbewertungssystem entfernt. Dies ist um spoilern vorzubeugen.</translation>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Einstellungen für das Aussehen Jellyfins.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -11877,7 +11877,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Hides all clocks in Jellyfin. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Hides all clocks in Naqafin. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Blendet alle Uhren in Jellyfin aus. Jellyfin muss neu gestartet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -12532,7 +12532,7 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Benutzen Sie den generierten Startbildschirm als Jellyfin&apos;s Start-Hintergrund. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -12866,7 +12866,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Einstellungen die das Aussehen von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -12955,7 +12955,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -13056,7 +13056,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Popup-Fenster mit Neuigkeiten anzeigen wenn Jellyfin auf eine neue Version aktualisiert wurde.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -14269,7 +14269,7 @@
         <translation>Sendungen</translation>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen die das Aussehen von Jellyfin ändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -14336,7 +14336,7 @@
         <translation>Bilder von ungesehenen Episoden ausblenden.</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Generiertes Splashscreen-Bild als Jellyfins Starthintergrund verwenden. Jellyfin muss geschlossen und neu geöffnet werden, damit die Änderungen übernommen werden.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -14346,7 +14346,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Sämtliche Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und neu geöffnet werden, damit die Änderungen übernommen werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -14814,7 +14814,7 @@
         <translation>Zufall aus</translation>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Zeige &quot;Als nächstes&quot; Popup nachdem Jellyfin auf eine neue Version aktualisiert wurde.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -14848,7 +14848,7 @@
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
-        <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
+        <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
         <translation>Anmeldung des aktuellen Nutzers erhalten und beim nächsten Start der Jellyfin-App automatisch anmelden.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -15075,7 +15075,7 @@
         <translation>Kanaldaten können nicht vom Server geladen werden</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Benutz das generierte Splashscreen-Bild als Jellyfin&apos;s Home-Hintergrundbild. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -15094,7 +15094,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und wieder geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -15824,7 +15824,7 @@
         <translation>Sendungen</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwende das generierte Splashscreen-Bild als Hintergrund für die Startseite von Jellyfin. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -16100,7 +16100,7 @@
         <extracomment>Help text in search results</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -16110,7 +16110,7 @@
         <extracomment>Settings Menu - Title for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -16148,7 +16148,7 @@
         <extracomment>Description of a setting - should we hide subtitles that might transcode</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Zeige Popup für Neue Funktionen, wenn Jellyfin auf eine neue Version aktualisiert wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -16325,12 +16325,12 @@
         <extracomment>User Setting - Setting title</extracomment>
     </message>
     <message>
-        <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
+        <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
         <translation>Merke dir den aktuell angemeldeten Benutzer und versuche, ihn beim nächsten Start der Jellyfin-App erneut anzumelden.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwende das generierte Splashscreen-Bild als Hintergrund für Jellyfin&apos;s Startseite. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -16969,7 +16969,7 @@
         <extracomment>Help text in search results</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -17087,7 +17087,7 @@
         <translation>Designelemente</translation>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwenden Sie das generierte Startbildschirm-Bild als Hintergrund für die Jellyfin-Startseite. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -17133,7 +17133,7 @@
         <translation>Geboren am</translation>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -17773,7 +17773,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Verwenden Sie das generierte Startbildschirm-Bild als Hintergrund für die Jellyfin-Startseite. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderung wirksam wird.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -17783,7 +17783,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Alle Uhren in Jellyfin ausblenden. Jellyfin muss geschlossen und erneut geöffnet werden, damit die Änderungen wirksam werden.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -17901,8 +17901,8 @@
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
-        <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
-        <translation>Den aktuell angemeldeten Nutzer merken und beim nächsten Start der Jellyfin App versuchen, diesen erneut einzuloggen.</translation>
+        <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
+        <translation>Den aktuell angemeldeten Nutzer merken und beim nächsten Start der Naqafin App versuchen, diesen erneut einzuloggen.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
@@ -17916,7 +17916,7 @@
         <extracomment>User Setting - Setting title</extracomment>
     </message>
     <message>
-        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Die Anordnung und Abschnitte der Roku-Startansicht an den Startbildschirm des Webclients anpassen. Die Jellyfin-App muss neu gestartet werden damit diese Änderung wirksam wird.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -18273,7 +18273,7 @@
         <extracomment>User Setting - Setting title</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Optionen, die das Design von Jellyfin verändern.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
@@ -18292,7 +18292,7 @@
         <extracomment>Dialog title in Main.brs</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Popup mit Neuigkeiten anzeigen, wenn Jellyfin auf eine neue Version aktualisiert wird.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>

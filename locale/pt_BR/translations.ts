@@ -347,7 +347,7 @@
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Oculte todos os relógios no Jellyfin. O Jellyfin precisará ser fechado e reaberto para que as alterações entrem em vigor.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -362,7 +362,7 @@
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
     <message>
-        <source>Show What&apos;s New popup when Jellyfin is updated to a new version.</source>
+        <source>Show What&apos;s New popup when Naqafin is updated to a new version.</source>
         <translation>Mostrar pop-up de novidades quando o Jellyfin for atualizado para uma nova versão.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>
@@ -411,7 +411,7 @@
         <extracomment>User Setting - Setting title</extracomment>
     </message>
     <message>
-        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Make the arrangement of the Roku home view sections match the web client&apos;s home screen. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Faça com que a organização das seções da visualização inicial do Roku corresponda à tela inicial do cliente web. O Jellyfin precisará ser fechado e reaberto para que as alterações entrem em vigor.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -597,12 +597,12 @@
         <extracomment>Option Title in user setting screen</extracomment>
     </message>
     <message>
-        <source>Options that alter the design of Jellyfin.</source>
+        <source>Options that alter the design of Naqafin.</source>
         <translation>Opções que alteram o design do Jellyfin.</translation>
         <extracomment>Description for Design Elements user settings.</extracomment>
     </message>
     <message>
-        <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Use gerar imagem da tela inicial como plano de fundo inicial do Jellyfin. O Jellyfin precisará ser fechado e reaberto para que as alterações entrem em vigor.</translation>
         <extracomment>Description for option in Setting Screen</extracomment>
     </message>
@@ -919,7 +919,7 @@
         <extracomment>User Setting - Setting description</extracomment>
     </message>
     <message>
-        <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
+        <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
         <translation>Manter o usuário conectado e tentar o login automático ao abrir o Jellyfin.</translation>
         <extracomment>User Setting - Setting description</extracomment>
     </message>
@@ -1374,8 +1374,8 @@
         <translation>O número de episódios que serão reproduzidos automaticamente após o episódio selecionado. Requer que a configuração do servidor “Reproduzir o próximo episódio automaticamente” esteja ativada.</translation>
     </message>
     <message>
-        <source>or newer to use this app or install and use the Jellyfin Legacy app from Roku&apos;s Streaming Store</source>
-        <translation>ou mais recente para usar este aplicativo ou instale e use o aplicativo Jellyfin Legacy na Streaming Store da Roku</translation>
+        <source>or newer to use this app or install a compatible legacy client</source>
+        <translation>ou mais recente para usar este aplicativo ou instale e use o aplicativo compatible legacy client na Streaming Store da Roku</translation>
     </message>
     <message>
         <source>Recently Added in</source>
@@ -1414,7 +1414,7 @@
         <translation>Um resumo rápido do que foi selecionado – geralmente uma sinopse curta.</translation>
     </message>
     <message>
-        <source>Forget applied library filters when Jellyfin is closed.</source>
+        <source>Forget applied library filters when Naqafin is closed.</source>
         <translation>Limpar filtros da biblioteca ao sair do Jellyfin.</translation>
     </message>
     <message>
@@ -1630,11 +1630,11 @@
         <translation>Tem certeza de que deseja excluir esta legenda?</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for preview segments?</source>
+        <source>What action should Naqafin take for preview segments?</source>
         <translation>Que ação o Jellyfin deve executar para segmentos de prévia?</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for recap segments?</source>
+        <source>What action should Naqafin take for recap segments?</source>
         <translation>Que ação o Jellyfin deve executar para segmentos de recapitulação?</translation>
     </message>
     <message>
@@ -1650,7 +1650,7 @@
         <translation>Ações de segmentos</translation>
     </message>
     <message>
-        <source>Settings relating to how Jellyfin should handle media segments.</source>
+        <source>Settings relating to how Naqafin should handle media segments.</source>
         <translation>Configurações sobre como o Jellyfin deve lidar com segmentos de mídia.</translation>
     </message>
     <message>
@@ -1658,11 +1658,11 @@
         <translation>Segmentos de introdução</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for commercial segments?</source>
+        <source>What action should Naqafin take for commercial segments?</source>
         <translation>Que ação o Jellyfin deve executar para segmentos comerciais?</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for intro segments?</source>
+        <source>What action should Naqafin take for intro segments?</source>
         <translation>Que ação o Jellyfin deve executar para segmentos de introdução?</translation>
     </message>
     <message>
@@ -1670,7 +1670,7 @@
         <translation>Segmentos de encerramento</translation>
     </message>
     <message>
-        <source>What action should Jellyfin take for outro segments?</source>
+        <source>What action should Naqafin take for outro segments?</source>
         <translation>Que ação o Jellyfin deve executar para segmentos de encerramento?</translation>
     </message>
     <message>
@@ -1974,31 +1974,31 @@
         <translation>Forçar transcodificação (remux desativado)</translation>
     </message>
     <message>
-        <source>Select what to show in section 1. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 1. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 1. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 2. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 2. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 2. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 4. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 4. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 4. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 5. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 5. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 5. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 6. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 6. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 6. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 7. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 7. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 7. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
-        <source>Select what to show in section 8. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 8. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 8. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
@@ -2054,7 +2054,7 @@
         <translation>Não, parar reprodução</translation>
     </message>
     <message>
-        <source>Select what to show in section 3. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
+        <source>Select what to show in section 3. This setting has no effect if \&quot;Use Web Client&apos;s Home Section Arrangement\&quot; is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
         <translation>Selecione o que exibir na seção 3. Esta configuração não terá efeito se \“Usar a disposição de seções da tela inicial do cliente web\” estiver ativada. O Jellyfin precisará ser fechado e reaberto para que a alteração tenha efeito.</translation>
     </message>
     <message>
@@ -5681,7 +5681,7 @@
         <translation>Avaliação IMDb</translation>
     </message>
     <message>
-        <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
+        <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
         <translation>Ocultar todos os relógios no Jellyfin. Jellyfin precisará ser fechado e reaberto para que as mudanças tenham efeito.</translation>
         <extracomment>Settings Menu - Description for option</extracomment>
     </message>

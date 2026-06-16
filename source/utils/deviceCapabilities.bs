@@ -27,7 +27,7 @@ end function
 function getDeviceProfile(videoCodec = string.EMPTY as string) as object
     globalDevice = m.global.device
     return {
-        "Name": "Official Roku Client",
+        "Name": "Naqafin Roku Client",
         "Id": globalDevice.id,
         "Identification": {
             "FriendlyName": globalDevice.friendlyName,

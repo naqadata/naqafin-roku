@@ -1,4 +1,5 @@
 Jellyfin
+Naqafin
 VSCode
 BrighterScript
 BrightScript

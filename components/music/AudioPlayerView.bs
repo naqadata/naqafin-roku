@@ -89,9 +89,9 @@ sub setupScreenSaver()
     m.screenSaverAlbumAnimation = m.top.findNode("screenSaverAlbumAnimation")
     m.screenSaverAlbumCoverFadeIn = m.top.findNode("screenSaverAlbumCoverFadeIn")
 
-    ' Jellyfin Screensaver
+    ' Naqafin Screensaver
     m.PosterOne = m.top.findNode("PosterOne")
-    m.PosterOne.uri = "pkg:/images/channel-poster_sd.jpg"
+    m.PosterOne.uri = "pkg:/images/channel-poster_sd.png"
     m.BounceAnimation = m.top.findNode("BounceAnimation")
     m.PosterOneFadeIn = m.top.findNode("PosterOneFadeIn")
 end sub
@@ -1056,4 +1056,3 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
     return false
 end function
-

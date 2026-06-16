@@ -1,3 +1,5 @@
+<p align="center"><img src="images/naqafin-poster.png" alt="Naqafin for Roku" style="border: 1px solid #222; border-radius: 4px" /></p>
+
 # Naqafin for Roku
 
 Naqafin is an unofficial Roku client for Jellyfin-compatible media servers.
@@ -15,6 +17,15 @@ Naqafin currently includes these changes relative to the official Jellyfin Roku 
 - Naqafin branding and Roku packaging metadata for private beta distribution.
 
 The feature changes are maintained separately so they can be proposed upstream as focused pull requests.
+
+## Companion Server Plugins
+
+Naqafin's additional Roku features currently depend on companion Jellyfin server plugins:
+
+- [Jellyfin Plugin Playlist Up Next](https://github.com/naqadata/jellyfin-plugin-playlist-up-next): exposes playlist-ordered resume candidates for the `Playlist Up Next` home row.
+- [Jellyfin Plugin Auto Generate Captions](https://github.com/naqadata/jellyfin-plugin-auto-generate-captions): provides the generated-caption session API and live WebVTT endpoint used by Naqafin's `Auto-Generated` subtitle option.
+
+These plugins are designed to work with Naqafin. Stock Jellyfin clients do not currently support these plugin-specific client workflows.
 
 ## Status
 
