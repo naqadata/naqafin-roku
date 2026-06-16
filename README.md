@@ -27,6 +27,16 @@ Naqafin's additional Roku features currently depend on companion Jellyfin server
 
 These plugins are designed to work with Naqafin. Stock Jellyfin clients do not currently support these plugin-specific client workflows.
 
+## Optional Caption Worker
+
+Generated captions can run entirely on the Jellyfin server through the Auto Generate Captions plugin. For better accuracy or throughput on a stronger GPU host, deploy [Naqafin Caption Worker](https://github.com/naqadata/naqafin-caption-worker) and configure the Jellyfin plugin to use it as a remote worker.
+
+Naqafin does not talk to the worker directly. The flow is:
+
+```text
+Naqafin Roku -> Jellyfin Auto Generate Captions plugin -> optional Naqafin Caption Worker
+```
+
 ## Status
 
 This is a personal/private beta build. Expect rough edges, force-pushed experiments, and changes that are useful for testing before they are polished enough for upstream review.
