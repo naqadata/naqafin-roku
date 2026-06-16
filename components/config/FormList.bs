@@ -46,7 +46,7 @@ end function
 
 
 sub formListShowDialog(configField)
-    dialog = createObject("roSGNode", "Standard" + "Keyboard" + "Dialog")
+    dialog = createObject("roSGNode", "StandardKeyboardDialog")
     m.configField = configField
     dialog.title = configField.label
     dialog.buttons = [tr("OK"), tr("Cancel")]
