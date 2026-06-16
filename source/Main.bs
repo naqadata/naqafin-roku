@@ -49,7 +49,7 @@ sub Main (args as dynamic) as void
 
     app_start:
     ' First thing to do is validate the ability to use the API
-    if not LoginFlow() then return
+    if not LoginFlow(args) then return
 
     ' Set user's chosen colors
     setUserColors()
@@ -57,11 +57,16 @@ sub Main (args as dynamic) as void
     ' remove login scenes from the stack
     sceneManager.callFunc("clearScenes")
 
-    ' load home page
-    group = CreateHomeGroup()
-    group.callFunc("loadLibraries")
-    stopLoadingSpinner()
-    sceneManager.callFunc("pushScene", group)
+    if isLaunchDeepLink(args)
+        signalAppLaunchComplete()
+        onDeepLinkingEvent(args)
+    else
+        ' load home page
+        group = CreateHomeGroup()
+        group.callFunc("loadLibraries")
+        stopLoadingSpinner()
+        sceneManager.callFunc("pushScene", group)
+    end if
 
     m.scene.observeField("exit", m.port)
 
@@ -108,9 +113,6 @@ sub Main (args as dynamic) as void
         print "app available memory kb = "; appMemoryMonitor.GetChannelAvailableMemory()
         print "app memory limits = "; appMemoryMonitor.GetChannelMemoryLimit()
     end if
-
-    ' Check if we were sent content to play with the startup command (Deep Link)
-    onDeepLinkingEvent(args)
 
     while true
         msg = wait(0, m.port)
@@ -223,6 +225,21 @@ sub Main (args as dynamic) as void
             print msg
         end if
     end while
+end sub
+
+function isLaunchDeepLink(args as dynamic) as boolean
+    if not isValidAndNotEmpty(args) then return false
+    if not isValidAndNotEmpty(args.mediaType) then return false
+    if not isValidAndNotEmpty(args.contentId) then return false
+
+    return true
+end function
+
+sub signalAppLaunchComplete()
+    if m.global.app_loaded then return
+
+    m.scene.signalBeacon("AppLaunchComplete")
+    m.global.app_loaded = true
 end sub
 
 sub downloadFallbackFont()
