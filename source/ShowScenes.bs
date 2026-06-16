@@ -2,12 +2,21 @@ import "pkg:/source/enums/ImageType.bs"
 import "pkg:/source/utils/misc.bs"
 
 const minimumServerVersion = [10, 9, 0]
+const rokuCertificationServerUrl = "https://roku-cert.naqadata.com"
+const rokuCertificationUsername = "roku-cert"
+const rokuCertificationMovieId = "67f619a84de6097b64a7f321c10a052f"
+const rokuCertificationEpisodeId = "86ab1f08d8722f4c025e69d1742475c4"
 
-function LoginFlow()
+function LoginFlow(args = invalid)
     'Collect Jellyfin server and user information
     start_login:
 
     serverUrl = get_setting("server")
+    if not isValid(serverUrl) and isRokuCertificationDeepLink(args)
+        set_setting("server", rokuCertificationServerUrl)
+        serverUrl = rokuCertificationServerUrl
+    end if
+
     if isValid(serverUrl)
         startOver = not session.server.UpdateURL(serverUrl)
     else
@@ -39,6 +48,19 @@ function LoginFlow()
     end if
 
     activeUser = get_setting("active_user")
+    if activeUser = invalid and isRokuCertificationDeepLink(args) and isStringEqual(m.global.session.server.url, rokuCertificationServerUrl)
+        startLoadingSpinner()
+        activeUser = get_token(rokuCertificationUsername, string.EMPTY)
+        if isValid(activeUser)
+            session.user.Login(activeUser, true)
+            set_user_setting("token", activeUser.token)
+            set_user_setting("username", rokuCertificationUsername)
+            LoadUserAbilities()
+            return true
+        end if
+        stopLoadingSpinner()
+    end if
+
     if activeUser = invalid
         user_select:
         SendPerformanceBeacon("AppDialogInitiate") ' Roku Performance monitoring - Dialog Starting
@@ -201,6 +223,20 @@ function LoginFlow()
     m.global.sceneManager.callFunc("clearScenes")
 
     return true
+end function
+
+function isRokuCertificationDeepLink(args as dynamic) as boolean
+    if not isValidAndNotEmpty(args) then return false
+    if not isValidAndNotEmpty(args.mediaType) then return false
+    if not isValidAndNotEmpty(args.contentId) then return false
+
+    mediaType = LCase(args.mediaType)
+    contentId = LCase(args.contentId)
+
+    if mediaType = "movie" and contentId = rokuCertificationMovieId then return true
+    if mediaType = "episode" and contentId = rokuCertificationEpisodeId then return true
+
+    return false
 end function
 
 sub ServerVersionCheck(systemVersion as string)
