@@ -1581,6 +1581,14 @@ sub onRoDeviceInfoEvent(msg)
     end if
 end sub
 
+sub onAppMemoryNotificationEvent(msg)
+    event = msg.GetInfo()
+
+    if isValid(event.MemoryUsagePercent)
+        print "event.MemoryUsagePercent = ", event.MemoryUsagePercent
+    end if
+end sub
+
 sub onReturnDataEvent(msg)
     ' User has chosen an option in a radio dialog
     popupNode = msg.getData()

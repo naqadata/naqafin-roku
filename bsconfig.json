@@ -10,7 +10,7 @@
     "locale/es_ES/**/*.*",
     "locale/fr_CA/**/*.*",
     "locale/it_IT/**/*.*",
-    "locale/pl/**/*.*",
+    "locale/pl_PL/**/*.*",
     "locale/pt_BR/**/*.*",
     "settings/*.*"
   ],

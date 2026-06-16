@@ -267,7 +267,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Digite o nome do servidor ou endereço IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Version</source>
@@ -3232,7 +3232,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Colocar o nome do servidor ou endereço ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3393,7 +3393,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Colocar o nome do servidor ou endereço ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3643,7 +3643,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Colocar o nome do servidor ou endereço ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4271,7 +4271,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Digite o nome do servidor ou endereço IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -5497,7 +5497,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Insira o nome do servidor ou seu endereço IPQ</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Version</source>

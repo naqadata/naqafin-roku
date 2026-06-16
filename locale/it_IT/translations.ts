@@ -720,7 +720,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Inserisci il nome o l&apos;IP del server</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -2681,7 +2681,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Inserisci il nome del server o l&apos;indirizzo ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -2908,7 +2908,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Inserisci il nome del server o l&apos;indirizzo ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3177,7 +3177,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Inserisci il nome del server o l&apos;indirizzo ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3426,7 +3426,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Inserisci il nome del server o l&apos;indirizzo ip</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3968,7 +3968,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Inserisci il nome o l&apos;IP del server</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -4723,7 +4723,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Inserisci il nome o l&apos;IP del server</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -5320,7 +5320,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Inserisci il nome o l&apos;IP del server</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>MPEG-2</source>

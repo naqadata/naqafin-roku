@@ -476,7 +476,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Denn Server Namen oder die IP eingeben</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -3485,7 +3485,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Geben Sie den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3787,7 +3787,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Geben Sie den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4009,7 +4009,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Geben Sie den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4248,7 +4248,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gib den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4529,7 +4529,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gib den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4798,7 +4798,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gib den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Ends at</source>
@@ -5033,7 +5033,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Server name oder IP-Adresse eingeben</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -5325,7 +5325,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -5639,7 +5639,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -6005,7 +6005,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -6450,7 +6450,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -6917,7 +6917,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -7422,7 +7422,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -7846,7 +7846,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -8961,7 +8961,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Unknown</source>
@@ -9589,7 +9589,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Gebe den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -10254,7 +10254,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Geben Sie den Servernamen oder die IP Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -10974,7 +10974,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Geben Sie den Servernamen oder die IP Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -11552,7 +11552,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Geben Sie den Servernamen oder die IP Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Record</source>
@@ -13205,7 +13205,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Geben Sie den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Level</source>
@@ -13663,7 +13663,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Geben Sie den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -14153,7 +14153,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Hostnamen oder IP-Adresse des Servers angeben</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Record</source>
@@ -15742,7 +15742,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Hostnamen oder IP-Adresse des Servers angeben</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Record</source>
@@ -16727,7 +16727,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Hostnamen oder IP-Adresse des Servers angeben</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -17556,7 +17556,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Gib den Servernamen oder die IP-Adresse ein</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>

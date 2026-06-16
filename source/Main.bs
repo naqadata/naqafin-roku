@@ -100,6 +100,15 @@ sub Main (args as dynamic) as void
     device.EnableLowGeneralMemoryEvent(true)
     device.EnableCodecCapChangedEvent(true)
 
+    appMemoryMonitor = CreateObject("roAppMemoryMonitor")
+    if isValid(appMemoryMonitor)
+        appMemoryMonitor.SetMessagePort(m.port)
+        appMemoryMonitor.EnableMemoryWarningEvent(true)
+        print "app memory usage percent = "; appMemoryMonitor.GetMemoryLimitPercent()
+        print "app available memory kb = "; appMemoryMonitor.GetChannelAvailableMemory()
+        print "app memory limits = "; appMemoryMonitor.GetChannelMemoryLimit()
+    end if
+
     ' Check if we were sent content to play with the startup command (Deep Link)
     onDeepLinkingEvent(args)
 
@@ -198,6 +207,8 @@ sub Main (args as dynamic) as void
             onStateEvent(msg)
         else if type(msg) = "roDeviceInfoEvent"
             onRoDeviceInfoEvent(msg)
+        else if type(msg) = "roAppMemoryNotificationEvent"
+            onAppMemoryNotificationEvent(msg)
         else if type(msg) = "roInputEvent"
             if msg.IsInput()
                 info = msg.GetInfo()

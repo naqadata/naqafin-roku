@@ -392,7 +392,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>An error was encountered while playing this item. Server did not provide required transcoding data.</source>
@@ -1694,7 +1694,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or ip address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>...or enter server URL manually:</source>
@@ -1734,7 +1734,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or ip address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>An error was encountered while playing this item. Server did not provide required transcoding data.</source>
@@ -1759,7 +1759,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>On Now</source>
@@ -1796,7 +1796,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or ip address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Cancel Series Recording</source>
@@ -1960,7 +1960,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Unknown</source>
@@ -2070,7 +2070,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Unknown</source>
@@ -2449,7 +2449,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or ip address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Unknown</source>
@@ -2897,7 +2897,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Unknown</source>
@@ -3037,7 +3037,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Cast &amp; Crew</source>
@@ -3733,7 +3733,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -4373,7 +4373,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>TV Shows</source>
@@ -4495,7 +4495,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Cancel Recording</source>
@@ -4580,7 +4580,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>...or enter server URL manually:</source>
@@ -4933,7 +4933,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -5090,7 +5090,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -5963,7 +5963,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Direct playing</source>
@@ -6823,7 +6823,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>On Now</source>
@@ -7120,7 +7120,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Enter the server name or IP address</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>(Dialog will close automatically)</source>

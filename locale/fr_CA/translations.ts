@@ -505,7 +505,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Entrez l’adresse du serveur (nom d’hôte ou adresse IP)</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>...or enter server URL manually:</source>
@@ -2916,7 +2916,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Entrer le nom du serveur ou l&apos;adresse IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
