@@ -987,15 +987,19 @@ sub onVideoContentLoaded()
     end if
 
     if isValid(selectedSubtitle)
-        availableSubtitleTrackIndex = availSubtitleTrackIdx(selectedSubtitle.Track.TrackName)
-        if availableSubtitleTrackIndex <> SubtitleSelection.NONE
-            if not selectedSubtitle.IsEncoded
-                if selectedSubtitle.IsForced
-                    ' If IsForced, make sure to remember the Roku global setting so we can set it back when the video is done playing.
-                    m.originalClosedCaptionState = m.top.globalCaptionMode
+        if not selectedSubtitle.IsEncoded
+            if selectedSubtitle.IsForced
+                ' If IsForced, make sure to remember the Roku global setting so we can set it back when the video is done playing.
+                m.originalClosedCaptionState = m.top.globalCaptionMode
+            end if
+            m.top.globalCaptionMode = "On"
+            if m.top.suppressCaptions
+                m.top.subtitleTrack = selectedSubtitle.Track.TrackName
+            else
+                availableSubtitleTrackIndex = availSubtitleTrackIdx(selectedSubtitle.Track.TrackName)
+                if availableSubtitleTrackIndex <> SubtitleSelection.NONE
+                    m.top.subtitleTrack = m.top.availableSubtitleTracks[availableSubtitleTrackIndex].TrackName
                 end if
-                m.top.globalCaptionMode = "On"
-                m.top.subtitleTrack = m.top.availableSubtitleTracks[availableSubtitleTrackIndex].TrackName
             end if
         end if
     end if
