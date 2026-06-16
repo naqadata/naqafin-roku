@@ -34,6 +34,7 @@ sub init()
 
     deviceInfo = CreateObject("roDeviceInfo")
     m.fontSize = chainLookupReturn(m.fontSizeDict, deviceInfo.GetCaptionsOption("Text/Size"), m.fontSizeDict.Default)
+    m.baseFontSize = m.fontSize
     textColor = chainLookupReturn(m.textColorDict, deviceInfo.GetCaptionsOption("Text/Color"), m.textColorDict.Default)
     m.textOpac = chainLookupReturn(m.percentageDict, deviceInfo.GetCaptionsOption("Text/Opacity"), m.percentageDict.Default)
     m.textColor = `${textColor}${m.textOpac}`
@@ -64,7 +65,7 @@ end sub
 sub fetchCaption()
     m.captionTimer.control = "stop"
     m.captionFetchTimer.control = "stop"
-    applyCaptionStyleForUrl()
+    applyDefaultCaptionStyle()
     if not isValidAndNotEmpty(m.top.url)
         m.captionTimer.control = "stop"
         return
@@ -103,25 +104,22 @@ function isLiveCaptionUrl(url as string) as boolean
     return url.Instr("/AutoGenerateCaptions/") <> -1
 end function
 
-sub applyCaptionStyleForUrl()
-    if isLiveCaptionUrl(m.top.url)
-        m.fonts = {
-            "regular": "font:SystemFontFile",
-            "bold": "font:BoldSystemFontFile",
-            "italic": "font:SystemFontFile",
-            "bolditalic": "font:BoldSystemFontFile"
-        }
-        m.fontSize = Int(m.fontSize * 0.75)
-        m.textColor = "0xFFFFFFFF"
-        m.bgColor = "0x00000000"
-        m.windowBgColor = "0x00000000"
-        m.textEffect = "Uniform"
-        m.lineHeights = getLineHeights()
-    end if
+sub applyDefaultCaptionStyle()
+    m.fonts = {
+        "regular": "font:SystemFontFile",
+        "bold": "font:BoldSystemFontFile",
+        "italic": "font:SystemFontFile",
+        "bolditalic": "font:BoldSystemFontFile"
+    }
+    m.fontSize = Int(m.baseFontSize * 0.75)
+    m.textColor = "0xFFFFFFFF"
+    m.bgColor = "0x00000000"
+    m.windowBgColor = "0x00000000"
+    m.textEffect = "Uniform"
+    m.lineHeights = getLineHeights()
 end sub
 
 function wrapAutoCaptionText(text as string) as string
-    if not isLiveCaptionUrl(m.top.url) then return text
     if text.Instr("<") <> -1 then return text
 
     wrappedLines = []

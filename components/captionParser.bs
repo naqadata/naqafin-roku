@@ -98,6 +98,7 @@ function isTime(text)
 end function
 
 function toMs(t)
+    t = t.replace(",", ".")
     t = t.replace(".", ":")
     t = t.left(12)
     timestamp = t.tokenize(":")
