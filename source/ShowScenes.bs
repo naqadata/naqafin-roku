@@ -12,7 +12,7 @@ function LoginFlow(args = invalid)
     start_login:
 
     serverUrl = get_setting("server")
-    if not isValid(serverUrl) and isRokuCertificationDeepLink(args)
+    if isRokuCertificationDeepLink(args)
         set_setting("server", rokuCertificationServerUrl)
         serverUrl = rokuCertificationServerUrl
     end if
@@ -33,6 +33,7 @@ function LoginFlow(args = invalid)
     m.serverSelection = "Saved"
     if startOver or invalidServer
         SendPerformanceBeacon("AppDialogInitiate") ' Roku Performance monitoring - Dialog Starting
+        SendPerformanceBeacon("AppLaunchComplete")
         m.serverSelection = CreateServerGroup()
         SendPerformanceBeacon("AppDialogComplete") ' Roku Performance monitoring - Dialog Closed
         if m.serverSelection = "backPressed"
@@ -48,7 +49,7 @@ function LoginFlow(args = invalid)
     end if
 
     activeUser = get_setting("active_user")
-    if activeUser = invalid and isRokuCertificationDeepLink(args) and isStringEqual(m.global.session.server.url, rokuCertificationServerUrl)
+    if isRokuCertificationDeepLink(args) and isStringEqual(m.global.session.server.url, rokuCertificationServerUrl)
         startLoadingSpinner()
         activeUser = get_token(rokuCertificationUsername, string.EMPTY)
         if isValid(activeUser)
