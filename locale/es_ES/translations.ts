@@ -706,7 +706,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Ingrese el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -3354,7 +3354,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Introduce la dirección IP o nombre del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -3750,7 +3750,7 @@
     <message>
         <source>Enter the server name or ip address</source>
         <translation>Introduce el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>The requested content does not exist on the server</source>
@@ -4435,7 +4435,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Agregar el nombre del servidor o direccion de IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -4715,7 +4715,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Agregar el nombre del servidor o su dirección de IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -5313,7 +5313,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduce el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>...or enter server URL manually:</source>
@@ -5721,7 +5721,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduce el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>...or enter server URL manually:</source>
@@ -6015,7 +6015,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduce el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Delete Saved</source>
@@ -6260,7 +6260,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduce el nombre del servidor o la dirección IP</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Song</source>
@@ -7053,7 +7053,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Ingresa nombre o dirección IP del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
@@ -7420,7 +7420,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Ingresa nombre o dirección IP del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -8806,7 +8806,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Ingresa nombre o dirección IP del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -9385,7 +9385,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduzca el nombre o dirección IP del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>
@@ -9774,7 +9774,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>Introduzca el nombre o la dirección IP del servidor</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Error Getting Playback Information</source>

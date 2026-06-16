@@ -495,7 +495,7 @@
     <message>
         <source>Enter the server name or IP address</source>
         <translation>输入服务器名称或IP地址</translation>
-        <extracomment>Title of KeyboardDialog when manually entering a server URL</extracomment>
+        <extracomment>Title of keyboard dialog when manually entering a server URL</extracomment>
     </message>
     <message>
         <source>Pick a Jellyfin server from the local network</source>
