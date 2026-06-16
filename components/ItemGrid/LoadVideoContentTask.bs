@@ -23,7 +23,7 @@ sub loadItems()
     m.top.isIntro = false
 
     ' Only show preroll once per queue
-    if m.global.queueManager.callFunc("isPrerollActive")
+    if not isRokuCertificationPlayback() and m.global.queueManager.callFunc("isPrerollActive")
         ' Prerolls not allowed if we're resuming video
         if m.global.queueManager.callFunc("getCurrentItem").startingPoint = 0
             preRoll = GetIntroVideos(m.top.itemId)
@@ -68,6 +68,8 @@ function LoadItems_VideoPlayer(id as string, mediaSourceId = invalid as dynamic,
 end function
 
 sub LoadItems_AddVideoContent(video as object, mediaSourceId as dynamic, audio_stream_idx = 1 as integer)
+
+    certificationPlayback = isRokuCertificationPlayback()
 
     meta = ItemMetaData(video.id)
 
@@ -136,7 +138,7 @@ sub LoadItems_AddVideoContent(video as object, mediaSourceId as dynamic, audio_s
     end if
 
     video.mediaSegments = {}
-    if isValidAndNotEmpty(meta.json.MediaSources)
+    if not certificationPlayback and isValidAndNotEmpty(meta.json.MediaSources)
         if isValid(meta.json.MediaSources[0].HasSegments)
             if meta.json.MediaSources[0].HasSegments
                 video.mediaSegments = api.MediaSegments.Get(video.id)
@@ -192,22 +194,26 @@ sub LoadItems_AddVideoContent(video as object, mediaSourceId as dynamic, audio_s
         end if
     end if
 
-    logoSource = isStringEqual(videotype, ItemType.TVCHANNEL) ? ImageType.PRIMARY : ImageType.LOGO ' TV Channel logos are stored under '/primary' instead of '/logo'
-    logoImageExists = api.items.HeadImageURLByName(logoLookupID, logoSource)
-    if logoImageExists
-        video.logoImage = api.items.GetImageURL(logoLookupID, logoSource, 0, { "format": "Png", "maxHeight": 65, "maxWidth": 300, "quality": "90" })
+    if not certificationPlayback
+        logoSource = isStringEqual(videotype, ItemType.TVCHANNEL) ? ImageType.PRIMARY : ImageType.LOGO ' TV Channel logos are stored under '/primary' instead of '/logo'
+        logoImageExists = api.items.HeadImageURLByName(logoLookupID, logoSource)
+        if logoImageExists
+            video.logoImage = api.items.GetImageURL(logoLookupID, logoSource, 0, { "format": "Png", "maxHeight": 65, "maxWidth": 300, "quality": "90" })
+        end if
     end if
 
-    additionalParts = api.videos.GetAdditionalParts(video.id)
     additionalPartsCount = 0
-    if isValid(additionalParts) and additionalParts.Items.Count() > 0
-        additionalPartsCount = additionalParts.Items.Count()
-        for i = 0 to additionalPartsCount - 1
-            m.global.queueManager.callFunc("push", additionalParts.Items[i])
-        end for
+    if not certificationPlayback
+        additionalParts = api.videos.GetAdditionalParts(video.id)
+        if isValid(additionalParts) and additionalParts.Items.Count() > 0
+            additionalPartsCount = additionalParts.Items.Count()
+            for i = 0 to additionalPartsCount - 1
+                m.global.queueManager.callFunc("push", additionalParts.Items[i])
+            end for
+        end if
     end if
 
-    if isValid(video.showID)
+    if not certificationPlayback and isValid(video.showID)
         if m.global.session.user.Configuration.EnableNextEpisodeAutoPlay
             episodeQueueLimit = chainLookupReturn(m.global.session, "user.settings.episodeQueueLimit", "50")
             episodeQueueLimit = episodeQueueLimit.ToInt()
@@ -408,6 +414,10 @@ sub addVideoContentURL(video, mediaSourceId, audio_stream_idx)
         video.content.url = buildURL(Substitute("Videos/{0}/stream", video.id), params)
     end if
 end sub
+
+function isRokuCertificationPlayback() as boolean
+    return isValid(m.global.rokuCertificationPlayback) and m.global.rokuCertificationPlayback
+end function
 
 
 ' addAudioStreamsToVideo: Add audio stream data to video

@@ -35,6 +35,7 @@ sub Main (args as dynamic) as void
     overhang = m.scene.findNode("overhang")
 
     m.global.addFields({ app_loaded: false, playstateTask: playstateTask, sceneManager: sceneManager })
+    m.global.addFields({ rokuCertificationPlayback: false })
     m.global.addFields({ queueManager: CreateObject("roSGNode", "QueueManager") })
     m.global.addFields({ audioPlayer: CreateObject("roSGNode", "AudioPlayer") })
     m.global.addFields({ jumpTo: {} })
@@ -57,15 +58,18 @@ sub Main (args as dynamic) as void
     ' remove login scenes from the stack
     sceneManager.callFunc("clearScenes")
 
+    group = CreateHomeGroup()
+    sceneManager.callFunc("pushScene", group)
+
     if isLaunchDeepLink(args)
+        m.global.rokuCertificationPlayback = isRokuCertificationDeepLink(args)
         signalAppLaunchComplete()
         onDeepLinkingEvent(args)
     else
+        m.global.rokuCertificationPlayback = false
         ' load home page
-        group = CreateHomeGroup()
         group.callFunc("loadLibraries")
         stopLoadingSpinner()
-        sceneManager.callFunc("pushScene", group)
     end if
 
     m.scene.observeField("exit", m.port)
@@ -214,6 +218,7 @@ sub Main (args as dynamic) as void
         else if type(msg) = "roInputEvent"
             if msg.IsInput()
                 info = msg.GetInfo()
+                m.global.rokuCertificationPlayback = isRokuCertificationDeepLink(info)
                 onDeepLinkingEvent(info)
             end if
         else if isNodeEvent(msg, "returnData")
