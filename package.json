@@ -1,8 +1,8 @@
 {
-  "name": "jellyfin",
+  "name": "naqafin-roku",
   "type": "module",
-  "version": "3.2.1",
-  "description": "Official Roku app for Jellyfin media server",
+  "version": "1.0.0",
+  "description": "Unofficial Roku client for Jellyfin-compatible media servers",
   "dependencies": {
     "@rokucommunity/bslib": "0.1.1",
     "brighterscript-formatter": "1.7.27"
@@ -20,18 +20,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jellyfin/jellyfin-roku.git"
+    "url": "https://github.com/naqadata/naqafin-roku.git"
   },
   "keywords": [
+    "naqafin",
     "jellyfin",
     "roku",
     "music",
     "movies"
   ],
-  "author": "Jellyfin",
+  "author": "Naqadata",
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/jellyfin/jellyfin-roku"
+    "url": "https://github.com/naqadata/naqafin-roku"
   },
-  "homepage": "https://github.com/jellyfin/jellyfin-roku"
+  "homepage": "https://github.com/naqadata/naqafin-roku"
 }

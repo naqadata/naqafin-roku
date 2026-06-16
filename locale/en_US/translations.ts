@@ -770,8 +770,8 @@
             <translation>Design Elements</translation>
         </message>
         <message>
-            <source>Options that alter the design of Jellyfin.</source>
-            <translation>Options that alter the design of Jellyfin.</translation>
+            <source>Options that alter the design of Naqafin.</source>
+            <translation>Options that alter the design of Naqafin.</translation>
             <extracomment>Description for Design Elements user settings.</extracomment>
         </message>
         <message>
@@ -780,8 +780,8 @@
             <extracomment>Option Title in user setting screen</extracomment>
         </message>
         <message>
-            <source>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Use generated splashscreen image as Jellyfin&apos;s home background. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Use generated splashscreen image as Naqafin&apos;s home background. Naqafin will need to be closed and reopened for change to take effect.</translation>
             <extracomment>Description for option in Setting Screen</extracomment>
         </message>
         <message>
@@ -800,8 +800,8 @@
             <extracomment>Option Title in user setting screen</extracomment>
         </message>
         <message>
-            <source>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</source>
-            <translation>Hide all clocks in Jellyfin. Jellyfin will need to be closed and reopened for changes to take effect.</translation>
+            <source>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</source>
+            <translation>Hide all clocks in Naqafin. Naqafin will need to be closed and reopened for changes to take effect.</translation>
             <extracomment>Settings Menu - Description for option</extracomment>
         </message>
         <message>
@@ -1049,8 +1049,8 @@
             <extracomment>Settings Menu - Title for option</extracomment>
         </message>
         <message>
-            <source>Show What's New popup when Jellyfin is updated to a new version.</source>
-            <translation>Show What's New popup when Jellyfin is updated to a new version.</translation>
+            <source>Show What's New popup when Naqafin is updated to a new version.</source>
+            <translation>Show What's New popup when Naqafin is updated to a new version.</translation>
             <extracomment>Settings Menu - Description for option</extracomment>
         </message>
         <message>
@@ -1394,8 +1394,8 @@
             <extracomment>User Setting - Setting title</extracomment>
         </message>
         <message>
-            <source>Remember the currently logged in user and try to log them in again next time you start the Jellyfin app.</source>
-            <translation>Remember the currently logged in user and try to log them in again next time you start Jellyfin.</translation>
+            <source>Remember the currently logged in user and try to log them in again next time you start the Naqafin app.</source>
+            <translation>Remember the currently logged in user and try to log them in again next time you start Naqafin.</translation>
             <extracomment>User Setting - Setting description</extracomment>
         </message>
         <message>
@@ -1444,8 +1444,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>Settings relating to how Jellyfin should handle media segments.</source>
-            <translation>Settings relating to how Jellyfin should handle media segments.</translation>
+            <source>Settings relating to how Naqafin should handle media segments.</source>
+            <translation>Settings relating to how Naqafin should handle media segments.</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1454,8 +1454,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>What action should Jellyfin take for commercial segments?</source>
-            <translation>What action should Jellyfin take for commercial segments?</translation>
+            <source>What action should Naqafin take for commercial segments?</source>
+            <translation>What action should Naqafin take for commercial segments?</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1464,8 +1464,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>What action should Jellyfin take for intro segments?</source>
-            <translation>What action should Jellyfin take for intro segments?</translation>
+            <source>What action should Naqafin take for intro segments?</source>
+            <translation>What action should Naqafin take for intro segments?</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1474,8 +1474,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>What action should Jellyfin take for outro segments?</source>
-            <translation>What action should Jellyfin take for outro segments?</translation>
+            <source>What action should Naqafin take for outro segments?</source>
+            <translation>What action should Naqafin take for outro segments?</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1484,8 +1484,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>What action should Jellyfin take for preview segments?</source>
-            <translation>What action should Jellyfin take for preview segments?</translation>
+            <source>What action should Naqafin take for preview segments?</source>
+            <translation>What action should Naqafin take for preview segments?</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1494,8 +1494,8 @@
             <extracomment>User Setting - Title for option</extracomment>
         </message>
         <message>
-            <source>What action should Jellyfin take for recap segments?</source>
-            <translation>What action should Jellyfin take for recap segments?</translation>
+            <source>What action should Naqafin take for recap segments?</source>
+            <translation>What action should Naqafin take for recap segments?</translation>
             <extracomment>User Setting - Description for option</extracomment>
         </message>
         <message>
@@ -1524,8 +1524,8 @@
             <extracomment>User Setting - Setting title</extracomment>
         </message>
         <message>
-            <source>Make the arrangement of the Roku home view sections match the web client's home screen. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Make the arrangement of the Roku home view sections match the web client's home screen. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Make the arrangement of the Roku home view sections match the web client's home screen. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Make the arrangement of the Roku home view sections match the web client's home screen. Naqafin will need to be closed and reopened for change to take effect.</translation>
             <extracomment>User Setting - Setting description</extracomment>
         </message>
         <message>
@@ -1589,8 +1589,8 @@
             <extracomment>Libraries Setting - Setting title</extracomment>
         </message>
         <message>
-            <source>Forget applied library filters when Jellyfin is closed.</source>
-            <translation>Forget applied library filters when Jellyfin is closed.</translation>
+            <source>Forget applied library filters when Naqafin is closed.</source>
+            <translation>Forget applied library filters when Naqafin is closed.</translation>
             <extracomment>Libraries Setting - Setting description</extracomment>
         </message>
         <message>
@@ -1683,8 +1683,8 @@
             <translation>which is not supported by this app. Please update the server to</translation>
         </message>
         <message>
-            <source>or newer to use this app or install and use the Jellyfin Legacy app from Roku's Streaming Store</source>
-            <translation>or newer to use this app or install and use the Jellyfin Legacy app from Roku's Streaming Store</translation>
+            <source>or newer to use this app or install a compatible legacy client</source>
+            <translation>or newer to use this app or install a compatible legacy client</translation>
         </message>
         <message>
             <source>Return to server select screen</source>
@@ -1942,36 +1942,36 @@
             <translation>Section 8</translation>
         </message>
         <message>
-            <source>Select what to show in section 1. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 1. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 1. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 1. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 2. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 2. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 2. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 2. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 3. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 3. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 3. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 3. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 4. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 4. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 4. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 4. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 5. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 5. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 5. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 5. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 6. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 6. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 6. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 6. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 7. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 7. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 7. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 7. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
-            <source>Select what to show in section 8. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</source>
-            <translation>Select what to show in section 8. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Jellyfin will need to be closed and reopened for change to take effect.</translation>
+            <source>Select what to show in section 8. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</source>
+            <translation>Select what to show in section 8. This setting has no effect if \"Use Web Client's Home Section Arrangement\" is enabled. Naqafin will need to be closed and reopened for change to take effect.</translation>
         </message>
         <message>
             <source>Live TV</source>
@@ -2460,8 +2460,8 @@
             <translation>Playback Speed Controls (Experimental)</translation>
         </message>
         <message>
-            <source>Use at your own risk. We make no guarantees this will work for you. \n 1. This feature may not work on this device, yet work on others \n 2. Some speed options may not work on this device, yet work on others \n 3. Roku may block this feature without warning; even if the Jellyfin client doesn't update</source>
-            <translation>Use at your own risk. We make no guarantees this will work for you. \n 1. This feature may not work on this device, yet work on others \n 2. Some speed options may not work on this device, yet work on others \n 3. Roku may block this feature without warning; even if the Jellyfin client doesn't update</translation>
+            <source>Use at your own risk. We make no guarantees this will work for you. \n 1. This feature may not work on this device, yet work on others \n 2. Some speed options may not work on this device, yet work on others \n 3. Roku may block this feature without warning; even if the Naqafin client doesn't update</source>
+            <translation>Use at your own risk. We make no guarantees this will work for you. \n 1. This feature may not work on this device, yet work on others \n 2. Some speed options may not work on this device, yet work on others \n 3. Roku may block this feature without warning; even if the Naqafin client doesn't update</translation>
         </message>
         <message>
             <source>Search Unavailable</source>
@@ -2484,8 +2484,8 @@
             <translation>Always Attempt Direct Playing Video Media</translation>
         </message>
         <message>
-            <source>Forces Jellyfin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</source>
-            <translation>Forces Jellyfin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</translation>
+            <source>Forces Naqafin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</source>
+            <translation>Forces Naqafin to try direct playing video media, Live TV excluded. Enabling this ignores all other playback support settings and will always first attempt direct playback. It also changes how transcode reason is displayed.</translation>
         </message>
         <message>
             <source>Roku thought it could direct play this media, but the playback duration was incorrect.</source>

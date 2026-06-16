@@ -1,5 +1,11 @@
-# Privacy Policy
+# Naqafin Privacy
 
-Jellyfin does not collect personal information outside of that needed to log in to the specified Jellyfin server. We simply pass this data along to the Jellyfin server. We do not collect, broadcast, nor send this data anywhere but to the Jellyfin server you specify.
+Naqafin is an unofficial Roku client for connecting to a Jellyfin-compatible media server that you configure.
 
-Read Jellyfin's Privacy Policy at <https://www.termsfeed.com/privacy-policy/6b05fa49bbfc1bb1aeda960c9e8d2460>
+Naqafin does not sell personal information, display ads, or include third-party analytics. The app stores and uses connection details, authentication tokens, playback state, and media information needed to communicate with your configured server.
+
+Your server controls the media library, user accounts, metadata, playback history, and related data available through the app.
+
+Roku may collect device, platform, and usage information under Roku's own privacy policies.
+
+Naqafin is not affiliated with, endorsed by, or sponsored by Jellyfin or Roku.

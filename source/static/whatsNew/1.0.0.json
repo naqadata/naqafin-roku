@@ -1,0 +1,14 @@
+[
+  {
+    "description": "Initial Naqafin Roku release with independent app branding",
+    "author": "Naqadata"
+  },
+  {
+    "description": "Add Playlist Up Next support",
+    "author": "Naqadata"
+  },
+  {
+    "description": "Add server-generated caption playback support",
+    "author": "Naqadata"
+  }
+]
