@@ -347,6 +347,13 @@ sub processSubtitleSelection()
         ' Roku can natively display these subtitles, ensure the caption mode on the device is on
         m.view.globalCaptionMode = "On"
 
+        if m.view.suppressCaptions
+            m.view.subtitleTrack = m.selectedSubtitle.Track.TrackName
+            m.global.queueManager.callFunc("setPreferredSubtitleTrack", m.selectedSubtitle)
+            m.view.selectedSubtitle = m.selectedSubtitle.Index
+            return
+        end if
+
         ' Roku may rearrange subtitle tracks. Look up track based on name to ensure we get the correct index
         availableSubtitleTrackIndex = availSubtitleTrackIdx(m.selectedSubtitle.Track.TrackName)
         if availableSubtitleTrackIndex = SubtitleSelection.NONE then return
