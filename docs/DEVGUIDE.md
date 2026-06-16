@@ -1,6 +1,6 @@
 # Naqafin Roku Dev Guide
 
-Naqafin is an unofficial downstream Roku client for Jellyfin-compatible media servers.
+Naqafin is an independent, unofficial downstream Roku client for Jellyfin-compatible media servers.
 
 ## Build
 
@@ -28,4 +28,4 @@ After sideloading, use the Roku developer web UI packager on the same device to 
 
 ## Upstream Work
 
-Keep changes intended for the official Jellyfin Roku client in focused feature branches. Naqafin-specific branding, packaging, and store metadata should stay in this downstream repo.
+Keep changes intended for possible upstream Jellyfin Roku contribution in focused feature branches. Naqafin-specific branding, packaging, and store metadata should stay in this downstream repo.
