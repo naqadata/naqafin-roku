@@ -1813,7 +1813,7 @@ sub processPlaylistPopup(selectedPopupButton as string, itemID as string)
         ]
 
         stopLoadingSpinner()
-        m.global.sceneManager.callFunc("keyboardDialog", "newPlaylist", tr("Create New Playlist"), ["Input name of new playlist"], resumeData, string.EMPTY, itemID)
+        m.global.sceneManager.callFunc("textEntryDialog", "newPlaylist", tr("Create New Playlist"), ["Input name of new playlist"], resumeData, string.EMPTY, itemID)
         return
     end if
 
@@ -2073,7 +2073,7 @@ sub processLibraryItemPopup(selectedPopupButton as string, itemID as string, par
         ]
 
         stopLoadingSpinner()
-        m.global.sceneManager.callFunc("keyboardDialog", "newPlaylist", tr("Create New Playlist"), ["Input name of new playlist"], resumeData, string.EMPTY, itemID)
+        m.global.sceneManager.callFunc("textEntryDialog", "newPlaylist", tr("Create New Playlist"), ["Input name of new playlist"], resumeData, string.EMPTY, itemID)
         return
     end if
 
