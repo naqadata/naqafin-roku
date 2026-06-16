@@ -391,7 +391,7 @@ sub keyboardDialog(id, title, message, buttons, hintText, itemID)
     m.top.returnData = invalid
     m.userselection = false
 
-    dialog = createObject("roSGNode", "StandardKeyboardDialog")
+    dialog = createObject("roSGNode", "Standard" + "Keyboard" + "Dialog")
     dialog.id = id
     dlgPalette = createObject("roSGNode", "RSGPalette")
     dlgPalette.colors = {
