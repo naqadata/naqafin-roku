@@ -153,6 +153,16 @@ function getEnhancedSubtitleStyleScale() as float
     return 1.0
 end function
 
+sub refreshCaptionStyle()
+    applyDefaultCaptionStyle()
+    enhancedSubtitleScale = getEnhancedSubtitleStyleScale()
+    if enhancedSubtitleScale > 0
+        applyEnhancedCaptionStyle(enhancedSubtitleScale)
+    end if
+
+    updateCaption(true)
+end sub
+
 function wrapAutoCaptionText(text as string) as string
     if text.Instr("<") <> -1 then return text
 
@@ -241,7 +251,7 @@ function newRect(lg, id as string, styledText = invalid, drawingStyles = invalid
     return rect
 end function
 
-sub updateCaption()
+sub updateCaption(force = false as boolean)
     if LCase(m.top.playerState.right(1)) = "w"
         m.top.playerState = m.top.playerState.left(len (m.top.playerState) - 1)
         return
@@ -249,9 +259,11 @@ sub updateCaption()
 
     m.top.currentCaption = []
 
-    if not isStringEqual(m.top.playerState, "playingon") then return
+    if not force and not isStringEqual(m.top.playerState, "playingon") then return
 
-    m.top.currentPos = m.top.currentPos + 100
+    if not force
+        m.top.currentPos = m.top.currentPos + 100
+    end if
     captions = []
 
     for each entry in m.captionList

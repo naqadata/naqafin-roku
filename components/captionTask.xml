@@ -7,6 +7,7 @@
               <field id="playerState" type="string" />
               <field id="currentPos" type="int" />
               <field id="pollSeconds" type="integer" value="2" />
+              <function name="refreshCaptionStyle" />
        </interface>
        <children>
               <timer id="captionTimer" repeat="true" duration="0.1" />

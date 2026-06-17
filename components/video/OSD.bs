@@ -46,6 +46,7 @@ sub init()
     m.top.observeField("progressPercentage", "onProgressPercentageChanged")
     m.top.observeField("playbackState", "onPlaybackStateChanged")
     m.top.observeField("videoEndingTime", "setVideoEndingTime")
+    m.top.observeField("showSubtitleStyleControl", "onShowSubtitleStyleControlChanged")
 
     m.top.observeField("itemTitleText", "onItemTitleTextChanged")
     m.top.observeField("itemSubtitleText", "onItemSubtitleTextChanged")
@@ -91,6 +92,68 @@ sub init()
     m.top.liveTvStartOffset = 0
     m.top.liveTvRewindLimit = LIVETV_REWIND_LIMIT
     reloadUI()
+end sub
+
+sub onShowSubtitleStyleControlChanged()
+    if m.top.showSubtitleStyleControl
+        if isValid(m.subtitleStyleButton) then return
+
+        m.subtitleStyleButton = createObject("roSGNode", "IconButton")
+        m.subtitleStyleButton.id = "showSubtitleStyleMenu"
+        m.subtitleStyleButton.padding = "16"
+        m.subtitleStyleButton.icon = "pkg:/images/icons/subtitleFontSize.png"
+        m.subtitleStyleButton.height = "65"
+        m.subtitleStyleButton.width = "100"
+        m.subtitleStyleButton.background = ColorPalette.DARKGREY
+        m.subtitleStyleButton.focusBackground = chainLookupReturn(m.global.session, "user.settings.colorCursor", ColorPalette.HIGHLIGHT)
+        m.optionControls.insertChild(m.subtitleStyleButton, 5)
+
+        if m.optionControls.buttonFocused >= 5
+            m.optionControls.buttonFocused++
+        end if
+
+        if m.optionControls.isInFocusChain() and m.focusedButtonIndex >= 5
+            m.focusedButtonIndex++
+        end if
+
+        return
+    end if
+
+    if not isValid(m.subtitleStyleButton) then return
+
+    wasFocused = false
+    if m.optionControls.isInFocusChain() and m.focusedButtonIndex < m.optionControls.getChildCount()
+        wasFocused = m.optionControls.getChild(m.focusedButtonIndex).id = m.subtitleStyleButton.id
+    end if
+
+    m.optionControls.removeChild(m.subtitleStyleButton)
+    m.subtitleStyleButton = invalid
+
+    if m.optionControls.buttonFocused > 5
+        m.optionControls.buttonFocused--
+    end if
+
+    if m.focusedButtonIndex > 5
+        m.focusedButtonIndex--
+    end if
+
+    if m.optionControls.buttonFocused >= m.optionControls.getChildCount()
+        m.optionControls.buttonFocused = m.optionControls.getChildCount() - 1
+    end if
+
+    if m.focusedButtonIndex >= m.optionControls.getChildCount()
+        m.focusedButtonIndex = m.optionControls.getChildCount() - 1
+    end if
+
+    if wasFocused
+        m.focusedButtonIndex = 5
+        if m.focusedButtonIndex >= m.optionControls.getChildCount()
+            m.focusedButtonIndex = m.optionControls.getChildCount() - 1
+        end if
+
+        m.optionControls.buttonFocused = m.focusedButtonIndex
+        m.optionControls.getChild(m.focusedButtonIndex).focus = true
+    end if
 end sub
 
 ' onProgressPercentageChanged: Handler for changes to m.top.progressPercentage param
@@ -617,4 +680,3 @@ sub updateProgressBar(live as boolean, updatePosition as integer)
     m.scrubber.translation = [scrubberHorizTrans, m.scrubber.translation[1]]
     m.scrubberOldPosition.translation = [scrubberOldPositionTrans, m.scrubberOldPosition.translation[1]]
 end sub
-
