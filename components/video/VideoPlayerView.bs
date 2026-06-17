@@ -18,6 +18,7 @@ import "pkg:/source/utils/misc.bs"
 const REPLAY_RETRIES = 3
 const BUFFERING_LOGO_RIGHT_PADDING = 30
 const ACCEPTED_DURATION_DELTA = 30
+const OSD_OVERVIEW_MAX_LENGTH = 1000
 
 sub init()
     m.top.enableUI = false
@@ -77,6 +78,7 @@ sub init()
     m.osd = m.top.findNode("osd")
     m.osd.observeField("action", "onOSDAction")
     m.subtitleTools = m.top.findNode("subtitleTools")
+    m.subtitleTools.observeField("wasClosed", "onSubtitleToolsClosed")
     m.castPopup = m.top.findNode("castPopup")
     m.clock = m.osd.findNode("clock")
     if isValid(m.clock)
@@ -418,6 +420,15 @@ sub handleShowSubtitleStyleMenuAction()
     m.subtitleTools.callFunc("show")
 end sub
 
+sub onSubtitleToolsClosed()
+    if not stateAllowsOSD() then return
+
+    setSiblingData()
+    refreshLiveOSDContent()
+    showOSD("videoControls")
+    m.osd.callFunc("focusOptionControl", "showSubtitleStyleMenu")
+end sub
+
 ' handleShowAudioMenuAction: Handles action to show audio selection menu
 '
 sub handleShowAudioMenuAction()
@@ -465,6 +476,15 @@ sub handleShowCastCrewPopupAction()
     handleHideAction(false)
     m.castPopup.callFunc("showCast", m.castPeople)
 end sub
+
+function getTruncatedOsdOverview(overview as dynamic) as string
+    if not isValidAndNotEmpty(overview) then return string.EMPTY
+
+    overviewText = overview.ToStr()
+    if overviewText.Len() <= OSD_OVERVIEW_MAX_LENGTH then return overviewText
+
+    return overviewText.Left(OSD_OVERVIEW_MAX_LENGTH) + "..."
+end function
 
 ' onOSDAction: Process action events from OSD to their respective handlers
 '
@@ -936,6 +956,7 @@ sub onVideoContentLoaded()
     m.top.transcodeParams = videoContent[0].transcodeparams
     m.chapters = videoContent[0].chapters
     m.overview = videoContent[0].overview
+    m.osd.itemOverviewText = getTruncatedOsdOverview(m.overview)
     m.castPeople = videoContent[0].people
     m.trickplay = videoContent[0].trickplay
     m.top.showID = videoContent[0].showID
@@ -1911,6 +1932,7 @@ sub onProgramDetailsLoaded()
     end if
 
     m.overview = m.LoadProgramDetailsTask.programDetails.json.CurrentProgram.Overview
+    m.osd.itemOverviewText = getTruncatedOsdOverview(m.overview)
 end sub
 
 ' showOSD: Show the OSD and set focus to the appropriate element based on whichfocus parameter

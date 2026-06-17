@@ -67,6 +67,7 @@ end sub
 sub hide()
     m.top.setFocus(false)
     m.top.visible = false
+    m.top.wasClosed = true
     activeScene = m.global.sceneManager.callFunc("getActiveScene")
     if isValid(activeScene)
         activeScene.setFocus(true)
