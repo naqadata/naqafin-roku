@@ -14,9 +14,11 @@ Naqafin currently includes these changes relative to the upstream Jellyfin Roku 
 
 - Playlist Up Next support: adds a home row for continuing playback from configured playlists.
 - Server-generated caption playback support: adds client support for requesting and playing generated subtitle tracks from a compatible Jellyfin server plugin.
+- Enhanced subtitle styling: adds Naqafin-rendered text subtitles with selectable size scaling from 50% to 100%.
+- In-player Subtitle Tools: adds playback-time controls for enhanced subtitle size, current-video subtitle timing offset, and enhanced subtitle background opacity while video continues playing.
 - Naqafin branding and Roku packaging metadata for independent distribution.
 
-The feature changes are maintained separately so they can be proposed upstream as focused pull requests.
+The feature changes are maintained separately from upstream Jellyfin Roku. Broadly reusable client changes can still be proposed upstream as focused pull requests when appropriate.
 
 ## Companion Server Plugins
 
@@ -26,6 +28,8 @@ Naqafin's additional Roku features currently depend on companion Jellyfin server
 - [Jellyfin Plugin Auto Generate Captions](https://github.com/naqadata/jellyfin-plugin-auto-generate-captions): provides the generated-caption session API and live WebVTT endpoint used by Naqafin's `Auto-Generated` subtitle option.
 
 These plugins are designed to work with Naqafin. Stock Jellyfin clients do not currently support these plugin-specific client workflows.
+
+The generated-caption feature is split intentionally: Naqafin starts and displays live generated WebVTT streams, while the Jellyfin plugin owns audio extraction, transcription orchestration, cue splitting, caching, and optional remote-worker fallback.
 
 ## Optional Caption Worker
 
@@ -59,14 +63,14 @@ The build output is written to `out/`.
 
 ## Development
 
-Most reusable client development should happen in focused Jellyfin Roku feature branches first. Naqafin then merges those branches and adds downstream-only branding/package changes.
+Most reusable client development should be kept cleanly separated from Naqafin-only branding and publication changes so it can be compared with, or proposed back to, upstream Jellyfin Roku if useful.
 
 Downstream-only changes should stay in this repo, including:
 
 - Naqafin app name and artwork
 - Roku beta/public package settings
 - Store listing, policy, and support metadata
-- Temporary compatibility tweaks for Naqafin distribution
+- Roku certification and publication compatibility tweaks for Naqafin distribution
 
 ## License
 
