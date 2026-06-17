@@ -57,6 +57,12 @@ sub init()
             "bolditalic": "font:LargeBoldSystemFont"
         }
     end if
+    m.defaultFonts = m.fonts
+    m.defaultFontSize = m.fontSize
+    m.defaultTextColor = m.textColor
+    m.defaultBgColor = m.bgColor
+    m.defaultWindowBgColor = m.windowBgColor
+    m.defaultTextEffect = m.textEffect
     ' Calculate and store the max line height for all font variants (used for per-line backgrounds)
     m.lineHeights = getLineHeights()
 
@@ -66,6 +72,10 @@ sub fetchCaption()
     m.captionTimer.control = "stop"
     m.captionFetchTimer.control = "stop"
     applyDefaultCaptionStyle()
+    enhancedSubtitleScale = getEnhancedSubtitleStyleScale()
+    if enhancedSubtitleScale > 0
+        applyEnhancedCaptionStyle(enhancedSubtitleScale)
+    end if
     if not isValidAndNotEmpty(m.top.url)
         m.captionTimer.control = "stop"
         return
@@ -105,19 +115,43 @@ function isLiveCaptionUrl(url as string) as boolean
 end function
 
 sub applyDefaultCaptionStyle()
+    m.fonts = m.defaultFonts
+    m.fontSize = m.defaultFontSize
+    m.textColor = m.defaultTextColor
+    m.bgColor = m.defaultBgColor
+    m.windowBgColor = m.defaultWindowBgColor
+    m.textEffect = m.defaultTextEffect
+    m.lineHeights = getLineHeights()
+end sub
+
+sub applyEnhancedCaptionStyle(scale as float)
     m.fonts = {
         "regular": "font:SystemFontFile",
         "bold": "font:BoldSystemFontFile",
         "italic": "font:SystemFontFile",
         "bolditalic": "font:BoldSystemFontFile"
     }
-    m.fontSize = Int(m.baseFontSize * 0.75)
+    m.fontSize = Int(m.baseFontSize * scale)
     m.textColor = "0xFFFFFFFF"
     m.bgColor = "0x00000000"
     m.windowBgColor = "0x00000000"
     m.textEffect = "Uniform"
     m.lineHeights = getLineHeights()
 end sub
+
+function getEnhancedSubtitleStyleScale() as float
+    settingValue = chainLookupReturn(m.global, "session.user.settings.`playback.subs.enhancedStyle`", "enabled100")
+
+    if isStringEqual(type(settingValue), "roBoolean") or isStringEqual(type(settingValue), "Boolean")
+        return settingValue ? 1.0 : 0.0
+    end if
+
+    if isStringEqual(settingValue, "disabled") then return 0.0
+    if isStringEqual(settingValue, "enabled50") then return 0.5
+    if isStringEqual(settingValue, "enabled75") then return 0.75
+    if isStringEqual(settingValue, "enabled90") then return 0.9
+    return 1.0
+end function
 
 function wrapAutoCaptionText(text as string) as string
     if text.Instr("<") <> -1 then return text
