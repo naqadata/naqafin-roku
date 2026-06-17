@@ -25,6 +25,8 @@ sub init()
     m.inactivityTimer = m.top.findNode("inactivityTimer")
     m.videoInfo = m.top.findNode("videoInfo")
     m.itemTitle = m.top.findNode("itemTitle")
+    m.itemOverviewGroup = m.top.findNode("itemOverviewGroup")
+    m.itemOverview = m.top.findNode("itemOverview")
     m.videoPlayPause = m.top.findNode("videoPlayPause")
     m.videoPositionTime = m.top.findNode("videoPositionTime")
     m.videoRemainingTime = m.top.findNode("videoRemainingTime")
@@ -50,6 +52,7 @@ sub init()
 
     m.top.observeField("itemTitleText", "onItemTitleTextChanged")
     m.top.observeField("itemSubtitleText", "onItemSubtitleTextChanged")
+    m.top.observeField("itemOverviewText", "onItemOverviewTextChanged")
     m.top.observeField("seasonNumber", "onSeasonNumberChanged")
     m.top.observeField("episodeNumber", "onEpisodeNumberChanged")
     m.top.observeField("episodeNumberEnd", "onEpisodeNumberEndChanged")
@@ -221,6 +224,11 @@ sub onItemSubtitleTextChanged()
     end if
 end sub
 
+sub onItemOverviewTextChanged()
+    m.itemOverview.text = m.top.itemOverviewText
+    m.itemOverviewGroup.visible = isValidAndNotEmpty(m.top.itemOverviewText)
+end sub
+
 ' onSeasonNumberChanged: Handler for changes to m.top.seasonNumber param.
 '
 sub onSeasonNumberChanged()
@@ -272,6 +280,7 @@ end sub
 ' @param {integer} verticalPixels - Number of vertical pixels to move option controls
 sub moveOptionControls(horizontalPixels as integer, verticalPixels as integer)
     m.optionControls.translation = `[${m.optionControls.translation[0] + horizontalPixels}, ${m.optionControls.translation[1] + verticalPixels}]`
+    m.itemOverviewGroup.translation = `[${m.itemOverviewGroup.translation[0] + horizontalPixels}, ${m.itemOverviewGroup.translation[1] + verticalPixels}]`
 end sub
 
 ' onLogoLoadStatusChanged: Handler for changes to logo image's status.
@@ -364,6 +373,35 @@ sub resetFocusToDefaultButton()
     m.videoControls.getChild(m.top.defaultButtonIndex).focus = true
     m.videoControls.buttonFocused = m.top.defaultButtonIndex
     m.optionControls.buttonFocused = m.optionControls.getChildCount() - 1
+end sub
+
+sub focusOptionControl(buttonId as string)
+    for each child in m.videoControls.getChildren(-1, 0)
+        if isValid(child.focus)
+            child.focus = false
+        end if
+    end for
+
+    for i = 0 to m.optionControls.getChildCount() - 1
+        child = m.optionControls.getChild(i)
+        if isValid(child.focus)
+            child.focus = false
+        end if
+
+        if isStringEqual(child.id, buttonId)
+            m.scrubber.visible = false
+            m.progressBarGroup.setFocus(false)
+            m.videoControls.setFocus(false)
+            m.optionControls.setFocus(true)
+            m.focusedButtonIndex = i
+            m.optionControls.buttonFocused = i
+            child.focus = true
+            m.top.action = "stopfastforwardorrewind"
+            return
+        end if
+    end for
+
+    setOsdStatus("optionControls")
 end sub
 
 ' onVisibleChanged: Handler for changes to the visibility of this menu.
