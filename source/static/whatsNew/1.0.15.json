@@ -2,5 +2,9 @@
   {
     "description": "Show episode synopsis directly on the playback overlay",
     "author": "Naqadata"
+  },
+  {
+    "description": "Fix Subtitle Tools dismissal returning to the playback overlay",
+    "author": "Naqadata"
   }
 ]
