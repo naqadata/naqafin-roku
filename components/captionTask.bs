@@ -75,6 +75,7 @@ sub fetchCaption()
     enhancedSubtitleScale = getEnhancedSubtitleStyleScale()
     if enhancedSubtitleScale > 0
         applyEnhancedCaptionStyle(enhancedSubtitleScale)
+        applySubtitleBackgroundOpacity()
     end if
     if not isValidAndNotEmpty(m.top.url)
         m.captionTimer.control = "stop"
@@ -139,6 +140,33 @@ sub applyEnhancedCaptionStyle(scale as float)
     m.lineHeights = getLineHeights()
 end sub
 
+sub applySubtitleBackgroundOpacity()
+    settingValue = chainLookupReturn(m.global, "session.user.settings.`playback.subs.backgroundOpacity`", invalid)
+    if not isValid(settingValue) then return
+
+    opacityPercent = int(val(settingValue.toStr()))
+    if opacityPercent < 0
+        opacityPercent = 0
+    else if opacityPercent > 100
+        opacityPercent = 100
+    end if
+
+    m.bgColor = "0x000000" + getOpacityHex(opacityPercent)
+end sub
+
+function getOpacityHex(opacityPercent as integer) as string
+    opacityHex = ["00", "0C", "19", "26", "33", "3F", "4C", "59", "66", "72", "7F", "8C", "99", "A5", "B2", "BF", "CC", "D8", "E5", "F2", "FF"]
+    opacityIndex = int(opacityPercent / 5)
+
+    if opacityIndex < 0
+        opacityIndex = 0
+    else if opacityIndex >= opacityHex.count()
+        opacityIndex = opacityHex.count() - 1
+    end if
+
+    return opacityHex[opacityIndex]
+end function
+
 function getEnhancedSubtitleStyleScale() as float
     settingValue = chainLookupReturn(m.global, "session.user.settings.`playback.subs.enhancedStyle`", "enabled100")
 
@@ -148,7 +176,10 @@ function getEnhancedSubtitleStyleScale() as float
 
     if isStringEqual(settingValue, "disabled") then return 0.0
     if isStringEqual(settingValue, "enabled50") then return 0.5
-    if isStringEqual(settingValue, "enabled75") then return 0.75
+    if isStringEqual(settingValue, "enabled60") then return 0.6
+    if isStringEqual(settingValue, "enabled70") then return 0.7
+    if isStringEqual(settingValue, "enabled75") then return 0.7
+    if isStringEqual(settingValue, "enabled80") then return 0.8
     if isStringEqual(settingValue, "enabled90") then return 0.9
     return 1.0
 end function
@@ -158,6 +189,7 @@ sub refreshCaptionStyle()
     enhancedSubtitleScale = getEnhancedSubtitleStyleScale()
     if enhancedSubtitleScale > 0
         applyEnhancedCaptionStyle(enhancedSubtitleScale)
+        applySubtitleBackgroundOpacity()
     end if
 
     updateCaption(true)
@@ -243,7 +275,7 @@ function newRect(lg, id as string, styledText = invalid, drawingStyles = invalid
     end if
 
     ' Draw per-line cue background
-    createCueBackgroundBox(rect, lg, styledText, drawingStyles, m.bgColor, m.lineHeights)
+    createCueBackgroundBox(rect, m.bgColor)
     ' Draw outline labels
     createShadowLabels(rect, styledText, drawingStyles, m.textEffect, m.bgColor)
     ' Add main label last so it renders on top of backgrounds and shadows
@@ -266,9 +298,11 @@ sub updateCaption(force = false as boolean)
     end if
     captions = []
 
+    captionPositionMs = m.top.currentPos - m.top.timingOffsetMs
+
     for each entry in m.captionList
         if entry["text"].count() = 0 then continue for ' Guard against empty text blocks
-        if entry["start"] <= m.top.currentPos and m.top.currentPos < entry["end"]
+        if entry["start"] <= captionPositionMs and captionPositionMs < entry["end"]
 
             fullText = wrapAutoCaptionText(entry["text"].Join(Chr(10)))
 

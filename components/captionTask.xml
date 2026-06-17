@@ -6,6 +6,7 @@
               <field id="currentCaption" type="roArray" />
               <field id="playerState" type="string" />
               <field id="currentPos" type="int" />
+              <field id="timingOffsetMs" type="integer" value="0" />
               <field id="pollSeconds" type="integer" value="2" />
               <function name="refreshCaptionStyle" />
        </interface>

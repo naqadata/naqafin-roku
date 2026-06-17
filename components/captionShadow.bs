@@ -85,67 +85,16 @@ sub createShadowLabels(rect as object, styledText as string, drawingStyles as ob
 
 end sub
 
-sub createCueBackgroundBox(rect as object, lg as object, styledText as string, drawingStyles as object, bgColor as string, lineHeights as object)
+sub createCueBackgroundBox(rect as object, bgColor as string)
     ' Skip if background is fully transparent
     if bgColor.right(2) = "00" then return
 
-    ' Reconstruct line fragments from styledText — splitting on \n while preserving open tags across lines
-    lineFragments = reconstructFragments(styledText)
-
-    ' Verify the tree is ready and get a reference to the main label for measurement
-    mainLabel = invalid
-    for i = 0 to lg.getChildCount() - 1
-        if isStringEqual(lg.getChild(i).subtype(), "MultiStyleLabel")
-            mainLabel = lg.getChild(i)
-            exit for
-        end if
-    end for
-
-    if not isValid(mainLabel) then return
-
-    ' Determine which height to use (same for all lines)
-    lineHeight = 0
-    if lineFragments.count() = 1
-        lineHeight = lineHeights.single
-    else
-        lineHeight = lineHeights.multi
-    end if
-
-    ' Measure per-line widths
-    lineWidths = []
-    for each line in lineFragments
-        tempLabel = CreateObject("roSGNode", "MultiStyleLabel")
-        tempLabel.drawingStyles = drawingStyles
-        tempLabel.text = line
-        lg.appendchild(tempLabel)
-        br = tempLabel.boundingRect()
-        lineWidths.push(br.width)
-        lg.removeChild(tempLabel)
-    end for
-
-    maxWidth = 0
-    for each w in lineWidths
-        if w > maxWidth
-            maxWidth = w
-        end if
-    end for
-
-    fontSize = drawingStyles["default"].fontSize
-    bgPadding = Int(fontSize * OUTLINE_STEP_RATIO) + 1
-
-    ' Create background boxes - same height for all lines
-    for i = 0 to lineFragments.count() - 1
-        bg = CreateObject("roSGNode", "Rectangle")
-        bg.height = lineHeight
-        bg.color = bgColor
-        ' Padding matches outline step so background fully covers shadow labels
-        bg.width = lineWidths[i] + (bgPadding * 2)
-        bg.translation = [
-            (maxWidth - lineWidths[i]) / 2 + BASE_OFFSET - bgPadding,
-            i * lineHeight + BASE_OFFSET
-        ]
-        rect.insertChild(bg, 0)
-    end for
+    bg = CreateObject("roSGNode", "Rectangle")
+    bg.height = rect.height
+    bg.color = bgColor
+    bg.width = rect.width
+    bg.translation = [0, 0]
+    rect.insertChild(bg, 0)
 end sub
 
 function createWindowBackground(id as string, styledText as string, textY as integer, bgColor as string, lineHeights as object) as object

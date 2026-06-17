@@ -76,6 +76,7 @@ sub init()
     m.chapterContent = m.top.findNode("chapterContent")
     m.osd = m.top.findNode("osd")
     m.osd.observeField("action", "onOSDAction")
+    m.subtitleTools = m.top.findNode("subtitleTools")
     m.castPopup = m.top.findNode("castPopup")
     m.clock = m.osd.findNode("clock")
     if isValid(m.clock)
@@ -105,6 +106,7 @@ sub init()
 
     ' Custom Caption Function
     m.top.observeField("allowCaptions", "onAllowCaptionsChange")
+    m.top.observeField("subtitleTimingOffsetMs", "onSubtitleTimingOffsetChange")
 
     m.playbackTimer.observeField("fire", "ReportPlayback")
     m.bufferPercentage = 0 ' Track whether content is being loaded
@@ -412,7 +414,8 @@ end sub
 ' handleShowSubtitleStyleMenuAction: Handles action to show subtitle style menu
 '
 sub handleShowSubtitleStyleMenuAction()
-    m.top.selectSubtitleStylePressed = true
+    handleHideAction(false)
+    m.subtitleTools.callFunc("show")
 end sub
 
 ' handleShowAudioMenuAction: Handles action to show audio selection menu
@@ -599,6 +602,7 @@ sub onAllowCaptionsChange()
     m.captionGroup = m.top.findNode("captionGroup")
     m.captionGroup.createchildren(9, "LayoutGroup")
     m.captionTask = createObject("roSGNode", "captionTask")
+    m.captionTask.timingOffsetMs = m.top.subtitleTimingOffsetMs
     m.captionTask.observeField("currentCaption", "updateCaption")
     m.captionTask.observeField("useThis", "checkCaptionMode")
     m.top.observeField("subtitleTrack", "loadCaption")
@@ -627,6 +631,14 @@ end sub
 
 sub refreshCaptionStyle()
     if isValid(m.captionTask)
+        m.captionTask.timingOffsetMs = m.top.subtitleTimingOffsetMs
+        m.captionTask.callFunc("refreshCaptionStyle")
+    end if
+end sub
+
+sub onSubtitleTimingOffsetChange()
+    if isValid(m.captionTask)
+        m.captionTask.timingOffsetMs = m.top.subtitleTimingOffsetMs
         m.captionTask.callFunc("refreshCaptionStyle")
     end if
 end sub
@@ -1480,10 +1492,8 @@ sub onPositionChanged()
     m.osd.progressDuration = m.top.duration
 
     ' Update the caption task playback position.
-    ' The position is calculated in milliseconds based on the current
-    ' video playback position plus the configured subtitle offset.
     if isValid(m.captionTask)
-        newPos = Int(m.top.position * 1000) + m.subtitleOffset
+        newPos = Int(m.top.position * 1000)
         m.captionTask.currentPos = newPos
     end if
 
@@ -1958,11 +1968,11 @@ sub refreshLiveOSDContent()
 end sub
 
 sub changeSubtitleTimeOffset(offsetAmount as integer)
-    ' If the subtitles are 60+ seconds off, the user needs to get better subtitles
-    if abs(m.subtitleOffset + offsetAmount) >= 60000 then return
+    newOffset = m.top.subtitleTimingOffsetMs + offsetAmount
+    if abs(newOffset) > 5000 then return
 
-    m.subtitleOffset += offsetAmount
-    m.subtitleSyncValue.text = `${tr("Current Offset")}: ${m.subtitleOffset.toStr()} ms`
+    m.top.subtitleTimingOffsetMs = newOffset
+    m.subtitleSyncValue.text = `${tr("Current Offset")}: ${m.top.subtitleTimingOffsetMs.toStr()} ms`
 end sub
 
 function onKeyEvent(key as string, press as boolean) as boolean
@@ -2039,7 +2049,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
 
             if isStringEqual(key, KeyCode.OK)
                 if m.subtitleSyncReset.hasfocus()
-                    changeSubtitleTimeOffset(m.subtitleOffset > 0 ? - m.subtitleOffset : abs(m.subtitleOffset))
+                    changeSubtitleTimeOffset(m.top.subtitleTimingOffsetMs > 0 ? - m.top.subtitleTimingOffsetMs : abs(m.top.subtitleTimingOffsetMs))
                     return true
                 end if
 
