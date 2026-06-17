@@ -285,6 +285,13 @@ sub settingFocused()
                 convertedValue = originalSelectedValue ? PlaybackMethod.FORCETRANSCODEALLOWREMUX : m.userLocation.peek().children[m.settingsMenu.itemFocused].default
                 set_user_setting(selectedSetting.settingName, convertedValue)
             end if
+        else if isStringEqual(selectedSetting.settingName, "playback.subs.enhancedStyle")
+            originalSelectedValue = m.global.session.user.settings[selectedSetting.settingName]
+
+            if isStringEqual(type(originalSelectedValue), "roBoolean") or isStringEqual(type(originalSelectedValue), "Boolean")
+                convertedValue = originalSelectedValue ? "enabled100" : "disabled"
+                set_user_setting(selectedSetting.settingName, convertedValue)
+            end if
         end if
 
         selectedValue = m.global.session.user.settings[selectedSetting.settingName]
