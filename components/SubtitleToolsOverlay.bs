@@ -1,0 +1,241 @@
+import "pkg:/source/enums/ColorPalette.bs"
+import "pkg:/source/enums/KeyCode.bs"
+import "pkg:/source/utils/config.bs"
+import "pkg:/source/utils/misc.bs"
+
+const SUBTITLE_TIMING_MIN_MS = -5000
+const SUBTITLE_TIMING_MAX_MS = 5000
+const SUBTITLE_TIMING_STEP_MS = 100
+const SUBTITLE_BACKGROUND_MIN_PERCENT = 0
+const SUBTITLE_BACKGROUND_MAX_PERCENT = 100
+const SUBTITLE_BACKGROUND_STEP_PERCENT = 5
+
+sub init()
+    m.panel = m.top.findNode("panel")
+    m.panelBackground = m.top.findNode("panelBackground")
+    m.focusRow = m.top.findNode("focusRow")
+    m.title = m.top.findNode("title")
+    m.rows = [
+        m.top.findNode("styleRow"),
+        m.top.findNode("timingRow"),
+        m.top.findNode("backgroundRow")
+    ]
+    m.focusedIndex = 0
+    m.backgroundColor = chainLookupReturn(m.global.session, "user.settings.colorDialogBackground", ColorPalette.ELEMENTBACKGROUND)
+    m.borderColor = chainLookupReturn(m.global.session, "user.settings.colorDialogBorderLine", ColorPalette.LIGHTBLUE)
+    m.textColor = chainLookupReturn(m.global.session, "user.settings.colorDialogText", ColorPalette.WHITE)
+    m.focusColor = chainLookupReturn(m.global.session, "user.settings.colorDialogSelectedText", ColorPalette.WHITE)
+    m.focusBackground = chainLookupReturn(m.global.session, "user.settings.colorCursor", ColorPalette.HIGHLIGHT)
+
+    m.panelBackground.blendColor = m.backgroundColor
+    m.focusRow.color = m.focusBackground
+    m.focusRow.opacity = 0.9
+    m.title.color = m.textColor
+    m.title.font.size = 34
+
+    for each row in m.rows
+        row.font.size = 30
+    end for
+
+    m.styles = [
+        { id: "disabled", title: tr("Disabled") },
+        { id: "enabled100", title: tr("Enabled at 100%") },
+        { id: "enabled90", title: tr("Enabled at 90%") },
+        { id: "enabled80", title: tr("Enabled at 80%") },
+        { id: "enabled70", title: tr("Enabled at 70%") },
+        { id: "enabled60", title: tr("Enabled at 60%") },
+        { id: "enabled50", title: tr("Enabled at 50%") }
+    ]
+
+    loadValues()
+    updateRows()
+end sub
+
+sub loadValues()
+    m.styleIndex = getStyleIndex(getSubtitleStyleSettingId())
+    m.timingOffsetMs = getActiveSubtitleTimingOffset()
+    m.backgroundOpacity = clampInt(getIntSetting("playback.subs.backgroundOpacity", 0), SUBTITLE_BACKGROUND_MIN_PERCENT, SUBTITLE_BACKGROUND_MAX_PERCENT)
+end sub
+
+sub show()
+    loadValues()
+    updateRows()
+    m.top.visible = true
+    m.top.setFocus(true)
+end sub
+
+sub hide()
+    m.top.setFocus(false)
+    m.top.visible = false
+    activeScene = m.global.sceneManager.callFunc("getActiveScene")
+    if isValid(activeScene)
+        activeScene.setFocus(true)
+    end if
+end sub
+
+sub updateRows()
+    m.rows[0].text = tr("Enhanced Styling") + ": " + m.styles[m.styleIndex].title
+    m.rows[1].text = tr("Timing") + ": " + formatTiming(m.timingOffsetMs) + "  " + getSliderText(m.timingOffsetMs, SUBTITLE_TIMING_MIN_MS, SUBTITLE_TIMING_MAX_MS)
+    if isEnhancedStylingDisabled()
+        m.rows[2].text = tr("Background") + ": " + tr("Disabled")
+    else
+        m.rows[2].text = tr("Background") + ": " + m.backgroundOpacity.toStr() + "%  " + getSliderText(m.backgroundOpacity, SUBTITLE_BACKGROUND_MIN_PERCENT, SUBTITLE_BACKGROUND_MAX_PERCENT)
+    end if
+    m.focusRow.translation = [36, 86 + (m.focusedIndex * 62)]
+
+    for i = 0 to m.rows.count() - 1
+        m.rows[i].color = i = m.focusedIndex ? m.focusColor : m.textColor
+    end for
+
+    if isEnhancedStylingDisabled()
+        m.rows[2].color = m.focusedIndex = 2 ? ColorPalette.LIGHTGREY : ColorPalette.MIDGREY
+    end if
+end sub
+
+function onKeyEvent(key as string, press as boolean) as boolean
+    if not press then return false
+
+    if key = KeyCode.UP
+        m.focusedIndex--
+        if m.focusedIndex < 0 then m.focusedIndex = m.rows.count() - 1
+        updateRows()
+        return true
+    end if
+
+    if key = KeyCode.DOWN
+        m.focusedIndex++
+        if m.focusedIndex >= m.rows.count() then m.focusedIndex = 0
+        updateRows()
+        return true
+    end if
+
+    if key = KeyCode.LEFT
+        adjustFocusedRow(-1)
+        return true
+    end if
+
+    if key = KeyCode.RIGHT
+        adjustFocusedRow(1)
+        return true
+    end if
+
+    if key = KeyCode.OK or key = KeyCode.BACK
+        hide()
+        return true
+    end if
+
+    return false
+end function
+
+sub adjustFocusedRow(direction as integer)
+    if m.focusedIndex = 0
+        m.styleIndex += direction
+        if m.styleIndex < 0
+            m.styleIndex = m.styles.count() - 1
+        else if m.styleIndex >= m.styles.count()
+            m.styleIndex = 0
+        end if
+
+        set_user_setting("playback.subs.enhancedStyle", m.styles[m.styleIndex].id)
+    else if m.focusedIndex = 1
+        m.timingOffsetMs = clampInt(m.timingOffsetMs + (direction * SUBTITLE_TIMING_STEP_MS), SUBTITLE_TIMING_MIN_MS, SUBTITLE_TIMING_MAX_MS)
+        setActiveSubtitleTimingOffset(m.timingOffsetMs)
+    else if m.focusedIndex = 2
+        if isEnhancedStylingDisabled() then return
+        m.backgroundOpacity = clampInt(m.backgroundOpacity + (direction * SUBTITLE_BACKGROUND_STEP_PERCENT), SUBTITLE_BACKGROUND_MIN_PERCENT, SUBTITLE_BACKGROUND_MAX_PERCENT)
+        set_user_setting("playback.subs.backgroundOpacity", m.backgroundOpacity.toStr())
+    end if
+
+    updateRows()
+    refreshActiveCaptions()
+end sub
+
+sub refreshActiveCaptions()
+    activeScene = m.global.sceneManager.callFunc("getActiveScene")
+    if isValid(activeScene)
+        activeScene.callFunc("refreshCaptionStyle")
+    end if
+end sub
+
+function getActiveSubtitleTimingOffset() as integer
+    activeScene = m.global.sceneManager.callFunc("getActiveScene")
+    if isValid(activeScene) and isValid(activeScene.subtitleTimingOffsetMs)
+        return clampInt(activeScene.subtitleTimingOffsetMs, SUBTITLE_TIMING_MIN_MS, SUBTITLE_TIMING_MAX_MS)
+    end if
+
+    return 0
+end function
+
+sub setActiveSubtitleTimingOffset(offsetMs as integer)
+    activeScene = m.global.sceneManager.callFunc("getActiveScene")
+    if isValid(activeScene) and isValid(activeScene.subtitleTimingOffsetMs)
+        activeScene.subtitleTimingOffsetMs = offsetMs
+    end if
+end sub
+
+function getSubtitleStyleSettingId() as string
+    settingValue = chainLookupReturn(m.global, "session.user.settings.`playback.subs.enhancedStyle`", "enabled100")
+
+    if isStringEqual(type(settingValue), "roBoolean") or isStringEqual(type(settingValue), "Boolean")
+        return settingValue ? "enabled100" : "disabled"
+    end if
+
+    if isStringEqual(settingValue, "disabled") then return "disabled"
+    if isStringEqual(settingValue, "enabled50") then return "enabled50"
+    if isStringEqual(settingValue, "enabled60") then return "enabled60"
+    if isStringEqual(settingValue, "enabled70") then return "enabled70"
+    if isStringEqual(settingValue, "enabled75") then return "enabled70"
+    if isStringEqual(settingValue, "enabled80") then return "enabled80"
+    if isStringEqual(settingValue, "enabled90") then return "enabled90"
+    return "enabled100"
+end function
+
+function isEnhancedStylingDisabled() as boolean
+    return isStringEqual(m.styles[m.styleIndex].id, "disabled")
+end function
+
+function getStyleIndex(styleId as string) as integer
+    for i = 0 to m.styles.count() - 1
+        if isStringEqual(m.styles[i].id, styleId) then return i
+    end for
+
+    return 1
+end function
+
+function getIntSetting(settingName as string, defaultValue as integer) as integer
+    settingValue = m.global.session.user.settings.LookupCI(settingName)
+    if not isValid(settingValue) then return defaultValue
+
+    return int(val(settingValue.toStr()))
+end function
+
+function clampInt(value as integer, minValue as integer, maxValue as integer) as integer
+    if value < minValue then return minValue
+    if value > maxValue then return maxValue
+    return value
+end function
+
+function formatTiming(value as integer) as string
+    if value > 0 then return "+" + value.toStr() + "ms"
+    return value.toStr() + "ms"
+end function
+
+function getSliderText(value as integer, minValue as integer, maxValue as integer) as string
+    slotCount = 20
+    range = maxValue - minValue
+    filledSlots = int(((value - minValue) * slotCount) / range)
+    if filledSlots < 0 then filledSlots = 0
+    if filledSlots > slotCount then filledSlots = slotCount
+
+    sliderText = "["
+    for i = 0 to slotCount
+        if i = filledSlots
+            sliderText += "|"
+        else
+            sliderText += "-"
+        end if
+    end for
+    sliderText += "]"
+
+    return sliderText
+end function

@@ -118,8 +118,16 @@
             "id": "enabled90"
           },
           {
-            "title": "Enabled at 75%",
-            "id": "enabled75"
+            "title": "Enabled at 80%",
+            "id": "enabled80"
+          },
+          {
+            "title": "Enabled at 70%",
+            "id": "enabled70"
+          },
+          {
+            "title": "Enabled at 60%",
+            "id": "enabled60"
           },
           {
             "title": "Enabled at 50%",
