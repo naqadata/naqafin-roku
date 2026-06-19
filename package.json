@@ -16,7 +16,8 @@
     "undent": "1.0.1"
   },
   "scripts": {
-    "build": "npx rimraf build/ out/ && npx bsc --project bsconfig.json"
+    "build": "npx rimraf build/ out/ && npx bsc --project bsconfig.json",
+    "build:beta": "node scripts/build-beta.mjs"
   },
   "repository": {
     "type": "git",
