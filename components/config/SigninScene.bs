@@ -85,30 +85,6 @@ sub init()
     saveCredentials.uncheckedIconUri = "pkg:/images/icons/checkboxUnchecked.png"
     saveCredentials.focusedUncheckedIconUri = "pkg:/images/icons/checkboxUnchecked.png"
 
-    requestRokuSigninEmail()
-end sub
-
-sub requestRokuSigninEmail()
-    m.channelStore = CreateObject("roSGNode", "ChannelStore")
-    if not isValid(m.channelStore) then return
-
-    info = CreateObject("roSGNode", "ContentNode")
-    info.addFields({ context: "signin" })
-
-    m.channelStore.requestedUserData = "email"
-    m.channelStore.requestedUserDataInfo = info
-    m.channelStore.observeField("userData", "onRokuUserDataChanged")
-    m.channelStore.command = "getUserData"
-end sub
-
-sub onRokuUserDataChanged()
-    if not isValid(m.channelStore) or not isValid(m.channelStore.userData) then return
-    if not isValidAndNotEmpty(m.channelStore.userData.email) then return
-
-    username_field = m.config.content.getChild(0)
-    if isStringEqual(username_field.value, string.EMPTY)
-        username_field.value = m.channelStore.userData.email
-    end if
 end sub
 
 sub onAlertChange()
