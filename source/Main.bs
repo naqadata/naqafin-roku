@@ -1,7 +1,6 @@
 import "pkg:/components/manager/ViewCreator.bs"
 import "pkg:/source/enums/ItemType.bs"
 import "pkg:/source/enums/String.bs"
-import "pkg:/source/utils/serverFeatures.bs"
 
 sub Main (args as dynamic) as void
     ' The main function that runs when the application is launched.
@@ -52,7 +51,6 @@ sub Main (args as dynamic) as void
     app_start:
     ' First thing to do is validate the ability to use the API
     if not LoginFlow(args) then return
-    saveNaqafinServerFeatures(loadNaqafinServerFeatures())
 
     ' Set user's chosen colors
     setUserColors()
