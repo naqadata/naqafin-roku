@@ -2,12 +2,13 @@
 <component name="SubtitleToolsOverlay" extends="Group" initialFocus="panel">
   <children>
     <Group id="panel" translation="[0,0]">
-      <Poster id="panelBackground" uri="pkg:/images/dialog.9.png" width="1150" height="300" />
+      <Poster id="panelBackground" uri="pkg:/images/dialog.9.png" width="1150" height="362" />
       <Rectangle id="focusRow" translation="[36, 86]" width="1078" height="52" />
       <Text id="title" text="Subtitle Tools" translation="[46, 28]" width="1058" height="44" />
       <Text id="styleRow" translation="[56, 92]" width="1038" height="44" />
       <Text id="timingRow" translation="[56, 154]" width="1038" height="44" />
       <Text id="backgroundRow" translation="[56, 216]" width="1038" height="44" />
+      <Text id="generatedLanguageRow" translation="[56, 278]" width="1038" height="44" />
     </Group>
   </children>
   <interface>
