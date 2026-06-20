@@ -33,6 +33,7 @@ end sub
 
 sub findNodes()
     initItemText()
+    initPlaylistContextLabel()
     initItemPoster()
     initItemTextExtra()
     initBackdrop()
@@ -48,6 +49,18 @@ sub initItemText()
     m.itemText = m.top.findNode("itemText")
     if isValid(m.itemText)
         m.itemText.color = chainLookupReturn(m.global.session, "user.settings.colorHomeRowItemTitle", ColorPalette.WHITE)
+    end if
+end sub
+
+sub initPlaylistContextLabel()
+    m.playlistContextBackground = m.top.findNode("playlistContextBackground")
+    m.playlistContextLabel = m.top.findNode("playlistContextLabel")
+    if isValid(m.playlistContextBackground)
+        m.playlistContextBackground.color = "#d8d8d8"
+    end if
+
+    if isValid(m.playlistContextLabel)
+        m.playlistContextLabel.color = "#111111"
     end if
 end sub
 
@@ -93,20 +106,36 @@ sub itemContentChanged()
     setColors()
     initItemIcon()
     initItemText()
+    initPlaylistContextLabel()
     initItemTextExtra()
 
     ' validate to prevent crash
     if not isValid(m.itemPoster) then initItemPoster()
     if not isValid(m.backdrop) then initBackdrop()
     if not isValid(m.itemIcon) then initItemIcon()
+    if not isValid(m.playlistContextLabel) then initPlaylistContextLabel()
 
     m.itemPoster.width = itemData.imageWidth
+    m.itemPoster.height = 261
+    m.itemPoster.translation = [0, 0]
     m.itemPoster.loadDisplayMode = "scaleToZoom"
 
+    m.backdrop.height = 261
+    m.backdrop.translation = [0, 0]
     m.itemTextExtra.width = itemData.imageWidth
     m.itemTextExtra.visible = true
     m.itemTextExtra.text = ""
     m.itemTextExtra.font.size = 22
+
+    if isValid(m.playlistContextBackground)
+        m.playlistContextBackground.width = itemData.imageWidth
+        m.playlistContextBackground.visible = false
+    end if
+
+    m.playlistContextLabel.width = itemData.imageWidth - 16
+    m.playlistContextLabel.visible = false
+    m.playlistContextLabel.text = ""
+    m.playlistContextLabel.font.size = 22
 
     m.itemText.maxWidth = itemData.imageWidth
     m.itemText.height = 34
@@ -115,6 +144,18 @@ sub itemContentChanged()
     m.itemText.vertAlign = "bottom"
 
     m.backdrop.width = itemData.imageWidth
+
+    if itemData.showPlaylistContextLabel
+        if isValid(m.playlistContextBackground) and isValidAndNotEmpty(itemData.playlistContextLabel)
+            m.playlistContextBackground.visible = true
+        end if
+        m.playlistContextLabel.visible = true
+        m.playlistContextLabel.text = itemData.playlistContextLabel
+        m.itemPoster.height = 231
+        m.itemPoster.translation = [0, 30]
+        m.backdrop.height = 231
+        m.backdrop.translation = [0, 30]
+    end if
 
     if isAllValid([m.itemIcon, itemData.iconUrl])
         m.itemIcon.uri = itemData.iconUrl
@@ -253,13 +294,13 @@ end sub
 
 sub displayTVChannelInfo(itemData as object)
     m.itemText.text = itemData.name
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, itemData.json.AlbumArtist)
+    m.itemTextExtra.text = itemData.json.AlbumArtist
     m.itemPoster.uri = ImageURL(itemData.LookupCI("id"))
 end sub
 
 sub displayAudioInfo(itemData as object)
     m.itemText.text = itemData.name
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, itemData.json.AlbumArtist)
+    m.itemTextExtra.text = itemData.json.AlbumArtist
     m.itemPoster.uri = ImageURL(itemData.LookupCI("id"))
 end sub
 
@@ -269,13 +310,13 @@ sub displayAudioBookInfo(itemData as object)
     end if
 
     m.itemText.text = itemData.name
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, itemData.json.AlbumArtist)
+    m.itemTextExtra.text = itemData.json.AlbumArtist
     m.itemPoster.uri = ImageURL(itemData.LookupCI("id"))
 end sub
 
 sub displayMusicAlbumInfo(itemData as object)
     m.itemText.text = itemData.name
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, itemData.json.AlbumArtist)
+    m.itemTextExtra.text = itemData.json.AlbumArtist
     m.itemPoster.uri = itemData.posterURL
 end sub
 
@@ -331,7 +372,7 @@ sub displayVideoInfo(itemData as object)
     end if
 
     m.itemPoster.uri = itemData.imageWidth = 180 ? itemData.posterURL : itemData.thumbnailURL
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, "")
+    m.itemTextExtra.text = ""
 end sub
 
 sub displayMovieInfo(itemData as object)
@@ -361,7 +402,7 @@ sub displayMovieInfo(itemData as object)
             textExtra = `${textExtra} - ${itemData.json.OfficialRating}`
         end if
     end if
-    m.itemTextExtra.text = addPlaylistUpNextContext(itemData, textExtra)
+    m.itemTextExtra.text = textExtra
 end sub
 
 sub displayProgramInfo(itemData as object)
@@ -422,21 +463,9 @@ sub displayEpisodeInfo(localGlobal as object, itemData as object)
     end if
 
     if isValid(m.itemTextExtra)
-        m.itemTextExtra.text = addPlaylistUpNextContext(itemData, extraPrefix + itemData.LookupCI("name"))
+        m.itemTextExtra.text = extraPrefix + itemData.LookupCI("name")
     end if
 end sub
-
-function addPlaylistUpNextContext(itemData as object, text as dynamic) as string
-    displayText = isValidAndNotEmpty(text) ? text : ""
-    playlistName = chainLookup(itemData, "json.PlaylistUpNextPlaylistName")
-    if not isValidAndNotEmpty(playlistName) then return displayText
-
-    if isValidAndNotEmpty(displayText)
-        return `[${playlistName}] ${displayText}`
-    end if
-
-    return `[${playlistName}]`
-end function
 
 '
 ' Draws and animates item progress bar

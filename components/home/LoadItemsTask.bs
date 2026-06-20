@@ -114,7 +114,7 @@ function loadLatestMedia() as object
 end function
 
 function loadContinueWatching() as object
-    results = []
+    results = loadPlaylistUpNext("resume")
 
     params = {
         recursive: true,
@@ -158,9 +158,10 @@ function loadContinueWatching() as object
             SeriesPrimaryImageTag: item.LookupCI("SeriesPrimaryImageTag"),
             BackdropImageTags: item.LookupCI("BackdropImageTags")
         }
-        results.push(tmp)
+        appendUniqueHomeItem(results, tmp)
     end for
 
+    applyPlaylistContextLabels(results)
     return results
 end function
 
@@ -405,7 +406,7 @@ function loadLiveTVOnNow() as object
 end function
 
 function loadNextUp() as object
-    results = []
+    results = loadPlaylistUpNext("next")
 
     params = {
         recursive: true,
@@ -439,7 +440,7 @@ function loadNextUp() as object
         for each item in data.Items
             tmp = CreateObject("roSGNode", "HomeData")
             tmp.json = item
-            results.push(tmp)
+            appendUniqueHomeItem(results, tmp)
             count++
             if count = 24
                 addViewAll = true
@@ -458,19 +459,24 @@ function loadNextUp() as object
             Type: ItemType.COLLECTIONFOLDER,
             CollectionType: "nextup"
         }
-        results.push(tmp)
+        appendUniqueHomeItem(results, tmp)
     end if
 
+    applyPlaylistContextLabels(results)
     return results
 end function
 
-function loadPlaylistUpNext() as object
+function loadPlaylistUpNext(playbackState = invalid) as object
     results = []
     if not serverSupportsPlaylistUpNext() then return results
 
     params = {
         limit: 24
     }
+
+    if isValidAndNotEmpty(playbackState)
+        params.AddReplace("playbackState", playbackState)
+    end if
 
     req = APIRequest(Substitute("PlaylistUpNext/{0}/Entries", m.global.session.user.id), params)
     if not isValid(req) then return results
@@ -493,6 +499,7 @@ function loadPlaylistUpNext() as object
         item.AddReplace("PlaylistUpNextPlaylistName", entry.LookupCI("PlaylistName"))
         item.AddReplace("PlaylistUpNextPlaylistIndex", entry.LookupCI("PlaylistIndex"))
         item.AddReplace("PlaylistUpNextIsExternalResumeItem", chainLookupReturn(entry, "IsExternalResumeItem", false))
+        item.AddReplace("PlaylistUpNextPlaybackState", entry.LookupCI("PlaybackState"))
 
         userData = item.LookupCI("UserData")
         if not isValid(userData)
@@ -507,11 +514,65 @@ function loadPlaylistUpNext() as object
 
         tmp = CreateObject("roSGNode", "HomeData")
         tmp.json = item
-        results.push(tmp)
+        appendUniqueHomeItem(results, tmp)
     end for
 
     return results
 end function
+
+function getHomeItemId(item as object) as string
+    itemId = chainLookup(item, "json.Id")
+    if isValidAndNotEmpty(itemId) then return itemId
+
+    itemId = chainLookup(item, "json.id")
+    if isValidAndNotEmpty(itemId) then return itemId
+
+    itemId = item.LookupCI("id")
+    return isValidAndNotEmpty(itemId) ? itemId : ""
+end function
+
+function homeItemIdExists(items as object, itemId as string) as boolean
+    if not isValidAndNotEmpty(itemId) then return false
+
+    for each existingItem in items
+        if isStringEqual(getHomeItemId(existingItem), itemId)
+            return true
+        end if
+    end for
+
+    return false
+end function
+
+sub appendUniqueHomeItem(items as object, item as object)
+    itemId = getHomeItemId(item)
+    if isValidAndNotEmpty(itemId) and homeItemIdExists(items, itemId)
+        return
+    end if
+
+    items.push(item)
+end sub
+
+sub applyPlaylistContextLabels(items as object)
+    showContextLabels = false
+
+    for each item in items
+        playlistName = chainLookup(item, "json.PlaylistUpNextPlaylistName")
+        if isValidAndNotEmpty(playlistName)
+            showContextLabels = true
+            exit for
+        end if
+    end for
+
+    for each item in items
+        item.showPlaylistContextLabel = showContextLabels
+        if showContextLabels
+            playlistName = chainLookupReturn(item, "json.PlaylistUpNextPlaylistName", "")
+            item.playlistContextLabel = isValidAndNotEmpty(playlistName) ? `Playlist: ${playlistName}` : ""
+        else
+            item.playlistContextLabel = ""
+        end if
+    end for
+end sub
 
 function loadFavorites() as object
     results = []

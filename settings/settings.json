@@ -890,10 +890,6 @@
                 "id": "nextup"
               },
               {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
-              },
-              {
                 "title": "None",
                 "id": "none"
               },
@@ -938,10 +934,6 @@
               {
                 "title": "Next Up",
                 "id": "nextup"
-              },
-              {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
               },
               {
                 "title": "None",
@@ -990,10 +982,6 @@
                 "id": "nextup"
               },
               {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
-              },
-              {
                 "title": "None",
                 "id": "none"
               },
@@ -1038,10 +1026,6 @@
               {
                 "title": "Next Up",
                 "id": "nextup"
-              },
-              {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
               },
               {
                 "title": "None",
@@ -1090,10 +1074,6 @@
                 "id": "nextup"
               },
               {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
-              },
-              {
                 "title": "None",
                 "id": "none"
               },
@@ -1138,10 +1118,6 @@
               {
                 "title": "Next Up",
                 "id": "nextup"
-              },
-              {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
               },
               {
                 "title": "None",
@@ -1190,10 +1166,6 @@
                 "id": "nextup"
               },
               {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
-              },
-              {
                 "title": "None",
                 "id": "none"
               },
@@ -1238,10 +1210,6 @@
               {
                 "title": "Next Up",
                 "id": "nextup"
-              },
-              {
-                "title": "Playlist Continue / Up Next",
-                "id": "playlistupnext"
               },
               {
                 "title": "None",

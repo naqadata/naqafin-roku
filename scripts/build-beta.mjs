@@ -18,6 +18,10 @@ for (const size of ["fhd", "hd", "sd"]) {
     join(repoRoot, "packaging", "beta", "images", `channel-poster_${size}_beta.png`),
     join(stagingImagesDir, `channel-poster_${size}_beta.png`),
   );
+  copyFileSync(
+    join(repoRoot, "packaging", "beta", "images", `splash-screen_${size}_beta.png`),
+    join(stagingImagesDir, `splash-screen_${size}_beta.png`),
+  );
 }
 
 const manifestPath = join(stagingDir, "manifest");
@@ -25,7 +29,10 @@ const manifest = readFileSync(manifestPath, "utf8")
   .replace(/^title=Naqafin$/m, "title=Naqafin Beta")
   .replace(/^mm_icon_focus_fhd=.*$/m, "mm_icon_focus_fhd=pkg:/images/channel-poster_fhd_beta.png")
   .replace(/^mm_icon_focus_hd=.*$/m, "mm_icon_focus_hd=pkg:/images/channel-poster_hd_beta.png")
-  .replace(/^mm_icon_focus_sd=.*$/m, "mm_icon_focus_sd=pkg:/images/channel-poster_sd_beta.png");
+  .replace(/^mm_icon_focus_sd=.*$/m, "mm_icon_focus_sd=pkg:/images/channel-poster_sd_beta.png")
+  .replace(/^splash_screen_fhd=.*$/m, "splash_screen_fhd=pkg:/images/splash-screen_fhd_beta.png")
+  .replace(/^splash_screen_hd=.*$/m, "splash_screen_hd=pkg:/images/splash-screen_hd_beta.png")
+  .replace(/^splash_screen_sd=.*$/m, "splash_screen_sd=pkg:/images/splash-screen_sd_beta.png");
 
 writeFileSync(manifestPath, manifest);
 rmSync(betaZip, { force: true });
