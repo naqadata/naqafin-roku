@@ -24,6 +24,13 @@ for (const size of ["fhd", "hd", "sd"]) {
   );
 }
 
+for (const size of ["fhd", "hd", "sd"]) {
+  for (const suffix of ["", "_dev"]) {
+    rmSync(join(stagingImagesDir, `channel-poster_${size}${suffix}.png`), { force: true });
+    rmSync(join(stagingImagesDir, `splash-screen_${size}${suffix}.png`), { force: true });
+  }
+}
+
 const manifestPath = join(stagingDir, "manifest");
 const manifest = readFileSync(manifestPath, "utf8")
   .replace(/^title=Naqafin$/m, "title=Naqafin Beta")
