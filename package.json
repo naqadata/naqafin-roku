@@ -17,7 +17,8 @@
   },
   "scripts": {
     "build": "npx rimraf build/ out/ && npx bsc --project bsconfig.json",
-    "build:beta": "node scripts/build-beta.mjs"
+    "build:beta": "node scripts/build-beta.mjs",
+    "build:dev": "node scripts/build-dev.mjs"
   },
   "repository": {
     "type": "git",
