@@ -49,6 +49,8 @@ sub init()
     m.top.observeField("playbackState", "onPlaybackStateChanged")
     m.top.observeField("videoEndingTime", "setVideoEndingTime")
     m.top.observeField("showSubtitleStyleControl", "onShowSubtitleStyleControlChanged")
+    m.top.observeField("skipSegmentControlVisible", "onSkipSegmentControlVisibilityChanged")
+    m.top.observeField("skipSegmentControlText", "onSkipSegmentControlTextChanged")
 
     m.top.observeField("itemTitleText", "onItemTitleTextChanged")
     m.top.observeField("itemSubtitleText", "onItemSubtitleTextChanged")
@@ -95,6 +97,52 @@ sub init()
     m.top.liveTvStartOffset = 0
     m.top.liveTvRewindLimit = LIVETV_REWIND_LIMIT
     reloadUI()
+end sub
+
+sub onSkipSegmentControlVisibilityChanged()
+    if m.top.skipSegmentControlVisible
+        if not isValid(m.skipSegmentControl)
+            m.skipSegmentControl = createObject("roSGNode", "StandardButton")
+            m.skipSegmentControl.id = "skipCurrentSegment"
+            m.skipSegmentControl.fontSize = "25"
+            m.skipSegmentControl.text = m.top.skipSegmentControlText
+            m.skipSegmentControl.height = "65"
+            m.skipSegmentControl.width = "190"
+            m.skipSegmentControl.background = ColorPalette.LIGHTBLUE
+            m.skipSegmentControl.color = ColorPalette.DARKGREY
+            m.skipSegmentControl.focusBackground = chainLookupReturn(m.global.session, "user.settings.colorCursor", ColorPalette.HIGHLIGHT)
+            m.skipSegmentControl.focusColor = ColorPalette.WHITE
+            m.videoControls.appendChild(m.skipSegmentControl)
+        end if
+
+        m.skipSegmentControl.visible = true
+        return
+    end if
+
+    if not isValid(m.skipSegmentControl) then return
+
+    wasFocused = m.videoControls.isInFocusChain() and m.focusedButtonIndex < m.videoControls.getChildCount() and m.videoControls.getChild(m.focusedButtonIndex).id = m.skipSegmentControl.id
+
+    m.videoControls.removeChild(m.skipSegmentControl)
+    m.skipSegmentControl = invalid
+
+    if m.videoControls.buttonFocused >= m.videoControls.getChildCount()
+        m.videoControls.buttonFocused = m.videoControls.getChildCount() - 1
+    end if
+
+    if m.focusedButtonIndex >= m.videoControls.getChildCount()
+        m.focusedButtonIndex = m.videoControls.getChildCount() - 1
+    end if
+
+    if wasFocused
+        resetFocusToDefaultButton()
+    end if
+end sub
+
+sub onSkipSegmentControlTextChanged()
+    if isValid(m.skipSegmentControl)
+        m.skipSegmentControl.text = m.top.skipSegmentControlText
+    end if
 end sub
 
 sub onShowSubtitleStyleControlChanged()
