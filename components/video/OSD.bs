@@ -27,6 +27,7 @@ sub init()
     m.itemTitle = m.top.findNode("itemTitle")
     m.itemOverviewGroup = m.top.findNode("itemOverviewGroup")
     m.itemOverview = m.top.findNode("itemOverview")
+    m.itemDate = m.top.findNode("itemDate")
     m.videoPlayPause = m.top.findNode("videoPlayPause")
     m.videoPositionTime = m.top.findNode("videoPositionTime")
     m.videoRemainingTime = m.top.findNode("videoRemainingTime")
@@ -55,6 +56,7 @@ sub init()
     m.top.observeField("itemTitleText", "onItemTitleTextChanged")
     m.top.observeField("itemSubtitleText", "onItemSubtitleTextChanged")
     m.top.observeField("itemOverviewText", "onItemOverviewTextChanged")
+    m.top.observeField("itemDateText", "onItemDateTextChanged")
     m.top.observeField("seasonNumber", "onSeasonNumberChanged")
     m.top.observeField("episodeNumber", "onEpisodeNumberChanged")
     m.top.observeField("episodeNumberEnd", "onEpisodeNumberEndChanged")
@@ -277,6 +279,11 @@ sub onItemOverviewTextChanged()
     m.itemOverviewGroup.visible = isValidAndNotEmpty(m.top.itemOverviewText)
 end sub
 
+sub onItemDateTextChanged()
+    m.itemDate.text = m.top.itemDateText
+    m.itemDate.visible = isValidAndNotEmpty(m.top.itemDateText)
+end sub
+
 ' onSeasonNumberChanged: Handler for changes to m.top.seasonNumber param.
 '
 sub onSeasonNumberChanged()
@@ -329,6 +336,7 @@ end sub
 sub moveOptionControls(horizontalPixels as integer, verticalPixels as integer)
     m.optionControls.translation = `[${m.optionControls.translation[0] + horizontalPixels}, ${m.optionControls.translation[1] + verticalPixels}]`
     m.itemOverviewGroup.translation = `[${m.itemOverviewGroup.translation[0] + horizontalPixels}, ${m.itemOverviewGroup.translation[1] + verticalPixels}]`
+    m.itemDate.translation = `[${m.itemDate.translation[0] + horizontalPixels}, ${m.itemDate.translation[1] + verticalPixels}]`
 end sub
 
 ' onLogoLoadStatusChanged: Handler for changes to logo image's status.

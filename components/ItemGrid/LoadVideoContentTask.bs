@@ -106,6 +106,9 @@ sub LoadItems_AddVideoContent(video as object, mediaSourceId as dynamic, audio_s
     video.trickplay = meta.json.Trickplay
     video.chapters = meta.json.Chapters
     video.content.title = meta.title
+    video.itemType = videotype
+    video.premiereDate = meta.json.PremiereDate
+    video.productionYear = meta.json.ProductionYear
     video.showID = meta.showID
 
     logoLookupID = video.id
