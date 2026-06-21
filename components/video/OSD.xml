@@ -26,6 +26,7 @@
       <Rectangle id="itemOverviewBackground" color="0x000000ff" opacity="0.4" width="1714" height="92" />
       <Text id="itemOverview" font="font:SmallestSystemFont" color="0xeeeeeeff" wrap="true" maxLines="2" width="1682" ellipsisText="..." translation="[16,10]" />
     </Group>
+    <Text id="itemDate" font="font:SmallestSystemFont" color="0xccccccFF" translation="[103,300]" width="1714" horizAlign="left" visible="false" />
 
     <ButtonGroup id="videoControls" itemSpacings="[20]" layoutDirection="horiz" horizAlignment="center" translation="[960,950]">
       <IconButton id="itemBack" padding="35" icon="pkg:/images/icons/itemPrevious.png" height="65" width="100" />
@@ -104,6 +105,7 @@
     <field id="itemTitleText" type="string" />
     <field id="itemSubtitleText" type="string" />
     <field id="itemOverviewText" type="string" />
+    <field id="itemDateText" type="string" />
     <field id="seasonNumber" type="integer" />
     <field id="episodeNumber" type="integer" />
     <field id="episodeNumberEnd" type="integer" />

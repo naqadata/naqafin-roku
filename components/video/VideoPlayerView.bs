@@ -490,6 +490,33 @@ function getTruncatedOsdOverview(overview as dynamic) as string
     return overviewText.Left(OSD_OVERVIEW_MAX_LENGTH) + "..."
 end function
 
+function formatPlaybackDateLabel(videoData as object) as string
+    playbackItemType = videoData.itemType
+    premiereDate = videoData.premiereDate
+
+    if isStringEqual(playbackItemType, ItemType.EPISODE)
+        if not isValidAndNotEmpty(premiereDate) then return string.EMPTY
+
+        airDate = CreateObject("roDateTime")
+        airDate.FromISO8601String(premiereDate)
+        return tr("Aired") + ": " + airDate.AsDateString("short-month-no-weekday")
+    end if
+
+    if isStringEqual(playbackItemType, ItemType.MOVIE)
+        if isValidAndNotEmpty(premiereDate)
+            releaseDate = CreateObject("roDateTime")
+            releaseDate.FromISO8601String(premiereDate)
+            return tr("Released") + ": " + releaseDate.AsDateString("short-month-no-weekday")
+        end if
+
+        if isValid(videoData.productionYear)
+            return tr("Released") + ": " + videoData.productionYear.ToStr()
+        end if
+    end if
+
+    return string.EMPTY
+end function
+
 ' onOSDAction: Process action events from OSD to their respective handlers
 '
 sub onOSDAction()
@@ -1013,6 +1040,7 @@ sub onVideoContentLoaded()
     m.chapters = videoContent[0].chapters
     m.overview = videoContent[0].overview
     m.osd.itemOverviewText = getTruncatedOsdOverview(m.overview)
+    m.osd.itemDateText = formatPlaybackDateLabel(videoContent[0])
     m.castPeople = videoContent[0].people
     m.trickplay = videoContent[0].trickplay
     m.top.showID = videoContent[0].showID
