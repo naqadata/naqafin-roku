@@ -560,6 +560,12 @@ sub onOSDAction()
         return
     end if
 
+    if action = "skipcurrentsegment"
+        skipCurrentSegment()
+        hideSegmentSkipButton()
+        return
+    end if
+
     if action = "showsyncmenu"
         handleShowsyncmenuAction()
         return
@@ -1357,38 +1363,49 @@ end sub
 sub hideSegmentSkipButton()
     m.currentSegmentEndTicks = 0
     m.currentSegmentType = invalid
+    m.osd.skipSegmentControlVisible = false
+    m.osd.skipSegmentControlText = string.EMPTY
+    hideFloatingSegmentSkipButton()
+    m.top.setFocus(true)
+end sub
+
+sub hideFloatingSegmentSkipButton()
     m.skipSegmentButton.visible = false
     m.skipSegmentButton.text = string.EMPTY
     m.skipSegmentButton.setFocus(false)
     m.skipSegmentButton.focus = false
     hideNextItem()
-    m.top.setFocus(true)
 end sub
 
 sub displaySegmentSkipButton(segmentType as string, endticks as double)
     m.currentSegmentEndTicks = endticks
     m.currentSegmentType = segmentType
 
-    if isValidAndNotEmpty(m.mediaSegmentDismissed) and m.mediaSegmentDismissed.DoesExist(m.currentSegmentType) then return
-
     ' Check if user has specific instructions for this media segment type
     userSetting = m.global.session.user.settings[`playback.mediasegments.${segmentType}`]
     if isValid(userSetting)
 
         ' User doesn't want anything to happen for this media segment type
-        if isStringEqual(userSetting, MediaSegmentAction.NONE) then return
+        if isStringEqual(userSetting, MediaSegmentAction.NONE)
+            m.osd.skipSegmentControlVisible = false
+            m.osd.skipSegmentControlText = string.EMPTY
+            return
+        end if
 
         ' User wants to auto-skip this media segment type.  Don't skip if we are in an active seek.
         if isStringEqual(userSetting, MediaSegmentAction.SKIP) and not m.osd.isSeeking
+            m.osd.skipSegmentControlVisible = false
+            m.osd.skipSegmentControlText = string.EMPTY
             skipCurrentSegment()
             return
         end if
     end if
 
-    if m.castPopup.visible then return
-
-    ' Check if button is already showing
-    if isStringEqual(m.skipSegmentButton.text, tr(`Skip ${segmentType}`)) then return
+    if m.castPopup.visible
+        m.osd.skipSegmentControlVisible = false
+        m.osd.skipSegmentControlText = string.EMPTY
+        return
+    end if
 
     if isStringEqual(segmentType, MediaSegmentType.OUTRO)
         if m.nextupbuttonseconds = 0 then return ' is the button disabled?
@@ -1397,8 +1414,22 @@ sub displaySegmentSkipButton(segmentType as string, endticks as double)
         end if
     end if
 
+    segmentButtonText = tr(`Skip ${segmentType}`)
+
+    if isValidAndNotEmpty(m.mediaSegmentDismissed) and m.mediaSegmentDismissed.DoesExist(m.currentSegmentType)
+        m.osd.skipSegmentControlText = segmentButtonText
+        m.osd.skipSegmentControlVisible = true
+        return
+    end if
+
+    m.osd.skipSegmentControlVisible = false
+    m.osd.skipSegmentControlText = string.EMPTY
+
+    ' Check if button is already showing
+    if isStringEqual(m.skipSegmentButton.text, segmentButtonText) then return
+
     m.skipSegmentButton.visible = true
-    m.skipSegmentButton.text = tr(`Skip ${segmentType}`)
+    m.skipSegmentButton.text = segmentButtonText
     if not m.osd.visible ' Only take focus if OSD is not visible
         setSkipSegmentButtonFocus()
     end if
@@ -1460,11 +1491,9 @@ end sub
 sub checkSegmentSkipButton(position as double)
     if not isValidAndNotEmpty(m.mediaSegments) then return
     if m.castPopup.visible and m.skipSegmentButton.visible
-        m.skipSegmentButton.visible = false
-        m.skipSegmentButton.text = string.EMPTY
-        m.skipSegmentButton.setFocus(false)
-        m.skipSegmentButton.focus = false
-        hideNextItem()
+        hideFloatingSegmentSkipButton()
+        m.osd.skipSegmentControlVisible = false
+        m.osd.skipSegmentControlText = string.EMPTY
     end if
 
     matchFound = false
@@ -2266,7 +2295,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 ' Show OSD, but don't pause video
                 setSiblingData()
                 if m.skipSegmentButton.visible
-                    hideSegmentSkipButton()
+                    hideFloatingSegmentSkipButton()
                 end if
                 refreshLiveOSDContent()
                 showOSD("videoControls")
@@ -2293,7 +2322,7 @@ function onKeyEvent(key as string, press as boolean) as boolean
                 m.top.control = VideoControl.PAUSE
                 setSiblingData()
                 if m.skipSegmentButton.visible
-                    hideSegmentSkipButton()
+                    hideFloatingSegmentSkipButton()
                 end if
                 refreshLiveOSDContent()
                 showOSD("videoControls")

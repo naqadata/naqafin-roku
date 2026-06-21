@@ -125,6 +125,8 @@
     <field id="liveTvStartOffset" type="integer" />
     <field id="liveTvRewindLimit" type="integer" />
     <field id="showSubtitleStyleControl" type="boolean" value="false" />
+    <field id="skipSegmentControlVisible" type="boolean" value="false" />
+    <field id="skipSegmentControlText" type="string" />
     <field id="defaultButtonIndex" type="integer" />
     <field id="isSeeking" type="boolean" />
     <field id="osdSeekKeyValue" type="string" />
