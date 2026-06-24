@@ -75,6 +75,10 @@
     </Rectangle>
 
     <StandardButton id="skipSegment" visible="false" height="85" width="275" translation="[1500, 950]" />
+    <Group id="skipSegmentCountdownBadge" visible="false" translation="[1734, 934]">
+      <Poster id="skipSegmentCountdownBadgeBackground" uri="pkg:/images/icons/circle64.png" blendColor="0xC0C0C0EE" width="52" height="52" />
+      <Text id="skipSegmentCountdownText" color="#111111" font="font:SmallBoldSystemFont" horizAlign="center" vertAlign="center" width="52" height="52" />
+    </Group>
 
     <Rectangle id="subtitleTimingButtons" height="120" width="560" translation="[100, 900]" visible="false">
       <Text id="subtitleSyncValue" translation="[10, 20]" />
@@ -112,6 +116,7 @@
 
     <Timer id="fastForwardOrRewindTimer" repeat="true" duration="0.3" />
     <Timer id="spinnerPercentTimer" repeat="true" duration="0.15" />
+    <Timer id="skipSegmentCountdownTimer" repeat="true" duration="1" />
     <Timer id="leftTenSecondSkipTimer" repeat="true" duration="0.5" />
     <Timer id="rightTenSecondSkipTimer" repeat="true" duration="0.5" />
 

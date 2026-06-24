@@ -8,6 +8,7 @@
     <field id="audioStreamIndex" type="integer" />
     <field id="positionTicks" type="longinteger" />
     <field id="language" type="string" value="auto" />
+    <field id="enableOpenAiPolish" type="boolean" value="true" />
     <field id="sessionId" type="string" />
     <field id="response" type="assocarray" />
     <field id="error" type="string" />

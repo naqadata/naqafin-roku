@@ -30,6 +30,7 @@
   <interface>
     <field id="buttons" type="nodearray" />
     <field id="options" type="assocarray" onChange="optionsSet" />
+    <field id="itemId" type="string" />
     <field id="videoStreamId" type="string" />
     <field id="video_codec" type="string" />
     <field id="codec" type="string" />

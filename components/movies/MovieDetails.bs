@@ -373,6 +373,7 @@ sub itemContentChanged()
 
     itemData = item.json
     m.top.id = itemData.id
+    m.options.itemId = itemData.id
 
     m.loadItemsTask.itemId = m.top.id
     m.loadItemsTask.control = TaskControl.RUN

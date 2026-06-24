@@ -9,6 +9,8 @@ end sub
 sub runTask()
     if LCase(m.top.action) = "stop"
         stopSession()
+    else if LCase(m.top.action) = "clear"
+        clearItemCache()
     else
         startSession()
     end if
@@ -21,6 +23,7 @@ sub startSession()
         audioStreamIndex: m.top.audioStreamIndex,
         positionTicks: m.top.positionTicks,
         language: m.top.language,
+        enableOpenAiPolish: m.top.enableOpenAiPolish,
         continueAfterPlaybackStops: false
     }
 
@@ -41,4 +44,27 @@ sub stopSession()
     req = APIRequest(Substitute("/AutoGenerateCaptions/Sessions/{0}/Stop", m.top.sessionId))
     postVoid(req)
     m.top.response = { sessionId: m.top.sessionId, stopped: true }
+end sub
+
+sub clearItemCache()
+    if not isValidAndNotEmpty(m.top.itemId)
+        m.top.error = "Missing item id for auto-generated caption cache clear"
+        return
+    end if
+
+    params = {
+        mediaSourceId: m.top.mediaSourceId,
+        audioStreamIndex: m.top.audioStreamIndex,
+        language: m.top.language
+    }
+
+    req = APIRequest(Substitute("/AutoGenerateCaptions/Items/{0}/Cache/Clear", m.top.itemId), params)
+    response = postJson(req, "{}")
+
+    if not isValid(response)
+        m.top.error = "Failed to clear auto-generated subtitle cache"
+        return
+    end if
+
+    m.top.response = response
 end sub
