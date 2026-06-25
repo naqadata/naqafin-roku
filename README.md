@@ -12,10 +12,11 @@ Naqafin does not provide media content. It connects to a Jellyfin server that yo
 
 Naqafin currently includes these changes relative to the upstream Jellyfin Roku project:
 
-- Playlist Up Next support: adds a home row for continuing playback from configured playlists.
-- Server-generated caption playback support: adds client support for requesting and playing generated subtitle tracks from a compatible Jellyfin server plugin.
+- Playlist Up Next support: enriches the existing Continue Watching and Next Up home rows with playlist-aware resume and next-item candidates from configured playlists.
+- Server-generated caption playback support: adds the `Auto-Generated` subtitle option when a compatible Jellyfin server plugin is installed.
+- Generated-caption controls: adds in-player language selection, optional OpenAI caption polish toggling, and per-video cache clearing when the server plugin advertises support.
 - Enhanced subtitle styling: adds Naqafin-rendered text subtitles with selectable size scaling from 50% to 100%.
-- In-player Subtitle Tools: adds playback-time controls for enhanced subtitle size, current-video subtitle timing offset, and enhanced subtitle background opacity while video continues playing.
+- In-player Subtitle Tools: adds playback-time controls for enhanced subtitle size, current-video subtitle timing offset, enhanced subtitle background opacity, and generated-caption options while video continues playing.
 - Naqafin branding and Roku packaging metadata for independent distribution.
 
 The feature changes are maintained separately from upstream Jellyfin Roku. Broadly reusable client changes can still be proposed upstream as focused pull requests when appropriate.
@@ -24,10 +25,12 @@ The feature changes are maintained separately from upstream Jellyfin Roku. Broad
 
 Naqafin's additional Roku features currently depend on companion Jellyfin server plugins:
 
-- [Jellyfin Plugin Playlist Up Next](https://github.com/naqadata/jellyfin-plugin-playlist-up-next): exposes playlist-ordered resume candidates for the `Playlist Up Next` home row.
-- [Jellyfin Plugin Auto Generate Captions](https://github.com/naqadata/jellyfin-plugin-auto-generate-captions): provides the generated-caption session API and live WebVTT endpoint used by Naqafin's `Auto-Generated` subtitle option.
+- [Jellyfin Plugin Playlist Up Next](https://github.com/naqadata/jellyfin-plugin-playlist-up-next): exposes playlist-ordered resume and next-up candidates that Naqafin blends into the existing Continue Watching and Next Up home rows.
+- [Jellyfin Plugin Auto Generate Captions](https://github.com/naqadata/jellyfin-plugin-auto-generate-captions): provides the generated-caption session API, live WebVTT endpoint, caption cache controls, and optional OpenAI polish capability used by Naqafin's subtitle UI.
 
 These plugins are designed to work with Naqafin. Stock Jellyfin clients do not currently support these plugin-specific client workflows.
+
+Naqafin hides plugin-backed UI unless the connected server reports the matching plugin as available. On servers without these plugins, the app behaves like the upstream Jellyfin Roku client for those features instead of showing dead controls.
 
 The generated-caption feature is split intentionally: Naqafin starts and displays live generated WebVTT streams, while the Jellyfin plugin owns audio extraction, transcription orchestration, cue splitting, caching, and optional remote-worker fallback.
 
